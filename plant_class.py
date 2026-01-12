@@ -1,23 +1,39 @@
 class Plant:
-    def __init__(self):
-        self.water = 50
-        self.light = 50
-        self.humidity = 50
+    def __init__(
+        self,
+        name,
+        water=50,
+        light=50,
+        humidity=50,
+        optimal_water=(40, 70),
+        optimal_light=(40, 70),
+        optimal_humidity=(40, 70)
+    ):
+        self.name = name
+
+        self.water = water
+        self.light = light
+        self.humidity = humidity
+
+        self.optimal_water = optimal_water
+        self.optimal_light = optimal_light
+        self.optimal_humidity = optimal_humidity
 
         self.health = 100
         self.stress = 0
-
         self.alive = True
 
         self.growth_stage = 1
         self.age = 0
+
         
-    def is_in_optimal_range(self):
-        return (
-            40 <= self.water <= 70 and
-            40 <= self.light <= 70 and
-            40 <= self.humidity <= 70
-        )
+def is_in_optimal_range(self):
+    return (
+        self.optimal_water[0] <= self.water <= self.optimal_water[1] and
+        self.optimal_light[0] <= self.light <= self.optimal_light[1] and
+        self.optimal_humidity[0] <= self.humidity <= self.optimal_humidity[1]
+    )
+
         
     def get_water_decay(self):
         return 1 + self.growth_stage * 0.5
