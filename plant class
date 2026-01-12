@@ -1,0 +1,58 @@
+class Plant:
+    def __init__(self):
+        self.water = 50
+        self.light = 50
+        self.humidity = 50
+
+        self.health = 100
+        self.stress = 0
+
+        self.alive = True
+
+        self.growth_stage = 1
+        self.age = 0
+        
+    def is_in_optimal_range(self):
+        return (
+            40 <= self.water <= 70 and
+            40 <= self.light <= 70 and
+            40 <= self.humidity <= 70
+        )
+        
+    def get_water_decay(self):
+        return 1 + self.growth_stage * 0.5
+
+        def update(self):
+        if not self.alive:
+            return
+
+        # Time passes
+        self.age += 1
+
+        # Natural decay (needs increase with growth)
+        self.water -= self.get_water_decay()
+        self.light -= 0.5
+        self.humidity -= 0.3
+
+        # Stress logic
+        if not self.is_in_optimal_range():
+            self.stress += 1
+        else:
+            self.stress = max(0, self.stress - 1)
+
+        # Delayed health impact
+        if self.stress > 10:
+            self.health -= 2
+        if self.stress > 20:
+            self.health -= 5
+
+        # Growth
+        if self.age % 30 == 0 and self.growth_stage < 3:
+            self.growth_stage += 1
+
+        # Death
+        if self.health <= 0:
+            self.alive = False
+
+
+        
