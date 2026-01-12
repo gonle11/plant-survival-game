@@ -1,1 +1,14 @@
+from tkinter import*
+fenetre = Tk()
 
+def accueil ():
+    canvaAcc = Canvas(fenetre, width=1300, height=645,background="green")
+    canvaAcc.imgAcc = PhotoImage(file="img-accueil.gif")
+    canvaAcc.create_image(900,300, anchor='nw',image=canvaAcc.imgAcc)
+    canvaAcc.create_rectangle(75,50,1000,150)
+    canvaAcc.create_rectangle(100,200,400,400)
+    canvaAcc.create_rectangle(100,450,600,620)
+    canvaAcc.pack()
+
+accueil()
+fenetre.mainloop()
