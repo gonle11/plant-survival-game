@@ -35,7 +35,7 @@ def is_in_optimal_range(self):
     )
 
         
-    def get_water_decay(self):
+def get_water_decay(self):
         return 1 + self.growth_stage * 0.5
 
         def update(self):
