@@ -8,6 +8,7 @@ class Plant:
         optimal_water=(40, 70),
         optimal_light=(40, 70),
         optimal_humidity=(40, 70)
+        difficulty="easy"
     ):
         self.name = name
 
@@ -25,6 +26,7 @@ class Plant:
 
         self.growth_stage = 1
         self.age = 0
+        self.difficulty = difficulty
 
 
     # easy plants
@@ -39,6 +41,7 @@ class Plant:
             optimal_light=(40, 70),
             optimal_humidity=(40, 60),
             optimal_warmth=(45, 65)
+            difficulty="easy"
         )
     
     
@@ -53,6 +56,7 @@ class Plant:
             optimal_light=(30, 80),
             optimal_humidity=(20, 40),
             optimal_warmth=(45, 65)
+            difficulty="easy"
         )
     
     
@@ -67,6 +71,7 @@ class Plant:
             optimal_light=(50, 80),
             optimal_humidity=(40, 60),
             optimal_warmth=(50, 65)
+            difficulty="easy"
         )
 
     # Medium plants
@@ -81,6 +86,7 @@ class Plant:
             optimal_light=(60, 80),
             optimal_humidity=(50, 70),
             optimal_warmth=(55, 70)
+            difficulty="medium"
         )
     
     
@@ -95,6 +101,7 @@ class Plant:
             optimal_light=(60, 80),
             optimal_humidity=(60, 80),
             optimal_warmth=(60, 75)
+            difficulty="medium"
         )
     
     
@@ -109,6 +116,7 @@ class Plant:
             optimal_light=(40, 60),
             optimal_humidity=(70, 90),
             optimal_warmth=(55, 70)
+            difficulty="medium"
         )
     
     
@@ -123,6 +131,7 @@ class Plant:
             optimal_light=(50, 70),
             optimal_humidity=(40, 60),
             optimal_warmth=(55, 70)
+            difficulty="medium"
         )
         
 # hard plant
@@ -137,6 +146,7 @@ class Plant:
         optimal_light=(40, 60),
         optimal_humidity=(80, 100),
         optimal_warmth=(60, 70)
+        difficulty="hard"
     )
 
 
@@ -151,6 +161,7 @@ def create_Alocasia_amazonica():
         optimal_light=(60, 80),
         optimal_humidity=(80, 100),
         optimal_warmth=(65, 75)
+        difficulty="hard"
     )
 
     
@@ -165,6 +176,7 @@ def create_Alocasia_amazonica():
             optimal_light=(70, 90),
             optimal_humidity=(50, 70),
             optimal_warmth=(60, 70)
+            difficulty="hard"
         )
 #specilal
     def create_Cactus_ferocactus():
@@ -178,6 +190,7 @@ def create_Alocasia_amazonica():
         optimal_light=(90, 100),
         optimal_humidity=(10, 20),
         optimal_warmth=(75, 90)
+        difficulty="special"
     )
 
 
@@ -192,15 +205,24 @@ def create_Nepenthes_alata():
         optimal_light=(70, 90),
         optimal_humidity=(90, 100),
         optimal_warmth=(70, 80)
+        difficulty="special"
     )
 
 
     
     
-    def is_in_optimal_range(self):
+    def is_in_optimal_water_range(self):
         return (
-            self.optimal_water[0] <= self.water <= self.optimal_water[1] and
-            self.optimal_light[0] <= self.light <= self.optimal_light[1] and
+            self.optimal_water[0] <= self.water <= self.optimal_water[1]
+        )
+        
+    def is_in_optimal_light_range(self):
+            return (
+            self.optimal_light[0] <= self.light <= self.optimal_light[1]
+            )
+        
+    def is_in_optimal_humidity_range(self):
+        return (
             self.optimal_humidity[0] <= self.humidity <= self.optimal_humidity[1]
         )
 
@@ -220,11 +242,16 @@ def create_Nepenthes_alata():
         self.light -= 0.5
         self.humidity -= 0.3
 
-        # Stress logic
-        if not self.is_in_optimal_range():
-            self.stress += 1
-        else:
-            self.stress = max(0, self.stress - 1)
+        # checks the otpimal conditions
+        checks_optimal = [
+            self.is_in_optimal_humidity_range(),
+            self.is_in_optimal_light_range(),
+            self.is_in_optimal_water_range(),
+        ]
+        
+        self.stress += checks_optimal.count(False)
+        self.stress = max(0, self.stress - 1) if all(checks_optimal) else self.stress
+
 
         # Delayed health impact
         if self.stress > 10:
