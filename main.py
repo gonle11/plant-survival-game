@@ -1,15 +1,19 @@
+
 from plant import Plant
 from simulation import Simulation
 import time
+import ramdom
 
-available_plants = [
-    create_Epipremnum_aureum(), 
-]
+     
+first_plant = random.choice(plant_pool["easy"])
+plant_pool["easy"].remove(first_plant)
 
 simulation = Simulation(
-    plants=[],
-    available_plants=available_plants
+    plants=[first_plant],
+    plant_pool=plant_pool
 )
+
+
 
 
 while simulation.running:
