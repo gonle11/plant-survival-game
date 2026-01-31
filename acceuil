@@ -52,7 +52,7 @@ def jeu():
         bestScore, nomActu,pdpActu=f.readlines()
         bPlayer,bMin, bSec = bestScore.split(" ")
     
-    canvaJeu = Canvas(fenetre, width=1300, height=645,background="#d9d9d9")
+    canvaJeu = Canvas(fenetre, width=1300, height=645)
     canvaJeu.imgBG = PhotoImage(file="background.png")
     canvaJeu.create_image(650,322,image=canvaJeu.imgBG)
     canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")#nom du joueur + pdp
@@ -69,6 +69,34 @@ def jeu():
     canvaJeu.create_text(1150,60,text="Comment jouer",font=(10))
     canvaJeu.create_text(1150,110,text="?",font=("Arial",50))
     
+    def up(event):
+        x,y=canvaJeu.coords("perso1")
+        if (y-10)>200:
+            canvaJeu.move("perso1",0,-10)
+    def down(event):
+        x,y=canvaJeu.coords("perso1")
+        if (y+10)<600:
+            canvaJeu.move("perso1",0,10)
+    def right(event):
+        x,y=canvaJeu.coords("perso1")
+        if (x+10)<1200:
+            canvaJeu.move("perso1",10,0)
+    def left(event):
+        x,y=canvaJeu.coords("perso1")
+        if (x-10)>50:
+            canvaJeu.move("perso1",-10,0)
+    
+        
+    
+    canvaJeu.imgPerso=PhotoImage(file="perso 1.png")
+    canvaJeu.create_image(650,450,image=canvaJeu.imgPerso,tag="perso1")
+    fenetre.bind('<KeyPress-Up>', up)
+    fenetre.bind('<KeyPress-Down>', down)
+    fenetre.bind('<KeyPress-Right>', right)
+    fenetre.bind('<KeyPress-Left>', left)
+    
+    
+    
     canvaJeu.imgPan = PhotoImage(file="panneau.png")
     canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
     
@@ -76,6 +104,7 @@ def jeu():
     
     def pause():
         Pause = Toplevel(fenetre)
+        
     def coord_souris(event):
         x = event.x
         y = event.y
@@ -152,9 +181,9 @@ def name():
             if (x>350 and x<450) and (y>50 and y<150):
                 pdpChoisi="3"
             with open("infos.txt","w") as f:
-                    f.write(bestScore)
-                    f.write(nomActu)
-                    f.write(pdpChoisi)
+                f.write(bestScore)
+                f.write(nomActu)
+                f.write(pdpChoisi)
             Pdp.destroy()    
         Pdp.bind('<Button-1>', numeroPdp)
     
