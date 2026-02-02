@@ -1,20 +1,24 @@
+# score.py
 import csv
-from datetime import datetime
-import os
-
-FILE_NAME = "scores.csv"
 
 def save_score(player_name, time_survived):
-    file_exists = os.path.isfile(FILE_NAME)
-
-    with open(FILE_NAME, mode="a", newline="", encoding="utf-8") as f:
+    with open("scores.csv", "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
+        writer.writerow([player_name, time_survived])
 
-        if not file_exists:
-            writer.writerow(["player", "time", "date"])
+def get_best_score():
+    with open("scores.csv", newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
 
-        writer.writerow([
-            player_name,
-            time_survived,
-            datetime.now().isoformat()
-        ])
+        best_player = None
+        best_time = -1
+
+        for row in reader:
+            player, time = row
+            time = int(time)
+
+            if time > best_time:
+                best_time = time
+                best_player = player
+
+    return best_player, best_time
