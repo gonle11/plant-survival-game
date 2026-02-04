@@ -6,13 +6,20 @@ def jeu(fenetre):
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
     
+    #creation du canva + bg
     canvaJeu = Canvas(fenetre, width=1300, height=645)
-    canvaJeu.imgBG = PhotoImage(file="background.png")
-    canvaJeu.create_image(650,322,image=canvaJeu.imgBG)
-    canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")#nom du joueur + pdp
+    canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
+    canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
+    canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
+    canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
+    
+    #nom du joueur + pdp
+    canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")
     canvaJeu.create_oval(95,55,160,120)
-    canvaJeu.create_text(127,135,text=nomActu,font=("Arial",15)) 
-    canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")#meilleur score
+    canvaJeu.create_text(127,135,text="nomActu",font=("Arial",15)) 
+
+    #meilleur score
+    canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")
     canvaJeu.create_text(350,75,text="Meilleur score :",font=("Arial",15))
     canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
     canvaJeu.create_oval(550,50,850,150,fill="#b4b4b4")#temps
