@@ -3,9 +3,8 @@ from tkinter import font
 
 def jeu(fenetre):
     
-    with open("infos.txt","r") as f:
-        bestScore, nomActu,pdpActu=f.readlines()
-        bPlayer,bMin, bSec = bestScore.split(" ")
+    with open("best_score.txt","r") as f:
+       bPlayer,bMin, bSec = f.read().split(" ")
     
     canvaJeu = Canvas(fenetre, width=1300, height=645)
     canvaJeu.imgBG = PhotoImage(file="background.png")
