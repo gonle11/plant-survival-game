@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import font
 
-def jeu(fenetre):
+def jeu(fenetre,nom):
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -16,7 +16,7 @@ def jeu(fenetre):
     #nom du joueur + pdp
     canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")
     canvaJeu.create_oval(95,55,160,120)
-    canvaJeu.create_text(127,135,text="nomActu",font=("Arial",15)) 
+    canvaJeu.create_text(127,135,text=nom,font=("Arial",15)) 
 
     #meilleur score
     canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")

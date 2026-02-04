@@ -69,7 +69,7 @@ def accueil():
     fenetre.bind('<Button-1>', coord_souris)
     
 def appel_jeu():
-    Fjeu.jeu(fenetre)
+    Fjeu.jeu(fenetre,nom)
 
 def appel_info():
     Finfo.info(fenetre)
