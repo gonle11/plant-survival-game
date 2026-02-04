@@ -1,5 +1,5 @@
 from tkinter import *
-import Fname,Fjeu, Finfo,FinfoPlantes
+import Fjeu, Finfo,FinfoPlantes
 
 fenetre = Tk()
 
