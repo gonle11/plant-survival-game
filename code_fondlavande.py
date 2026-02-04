@@ -10,7 +10,7 @@ def accueil():
     def recupNom():
        global nom
        nom=nomDonne.get()
-       print(nom)
+       entreeNom.configure(bg="green")
     
         
     canvaAcc = Canvas(fenetre, width=1300, height=645)
