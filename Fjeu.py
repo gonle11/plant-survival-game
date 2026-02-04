@@ -1,7 +1,10 @@
 from tkinter import *
 from tkinter import font
-
+import Finfo
 def jeu(fenetre,nom):
+
+    def appel_info():
+        Finfo.info(fenetre)
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -22,13 +25,18 @@ def jeu(fenetre,nom):
     canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")
     canvaJeu.create_text(350,75,text="Meilleur score :",font=("Arial",15))
     canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
-    canvaJeu.create_oval(550,50,850,150,fill="#b4b4b4")#temps
+
+    #temps
+    canvaJeu.create_oval(550,50,850,150,fill="#b4b4b4")
     canvaJeu.create_text(700,100,text="00:00",font=("Arial",50))
-    canvaJeu.create_oval(900,50,1000,150,fill="#b4b4b4")#pause
+
+    #pause
+    canvaJeu.create_oval(900,50,1000,150,fill="#b4b4b4")
     canvaJeu.create_text(950,100,text="| |",font=("Arial",50))
-    canvaJeu.create_rectangle(1050,50,1250,150,fill="#b4b4b4")#comment jouer
-    canvaJeu.create_text(1150,60,text="Comment jouer",font=(10))
-    canvaJeu.create_text(1150,110,text="?",font=("Arial",50))
+
+    #comment jouer
+    btnCommentJouer=Button(fenetre,font=("Arial",30),width="8",text="Comment \n jouer ? ",bg="#b4b4b4",command=appel_info)
+    btnCommentJouer.place(x=1050,y=50)
     
     def up(event):
         x,y=canvaJeu.coords("perso1")
@@ -75,3 +83,5 @@ def jeu(fenetre,nom):
             info()
             
     fenetre.bind('<Button-1>', coord_souris)
+
+
