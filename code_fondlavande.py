@@ -76,6 +76,7 @@ def appel_info():
     
 def appel_infoPlantes():
     FinfoPlantes.infoPlantes(fenetre) 
+#comment
     
 accueil()
 fenetre.mainloop()
