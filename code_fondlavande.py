@@ -87,7 +87,7 @@ def accueil():
     
 
 def appel_jeu():
-    Fjeu.jeu(fenetre,nom)
+    Fjeu.jeu(fenetre,nom,actu)
 
 def appel_info():
     Finfo.info(fenetre)

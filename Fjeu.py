@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import font
 import Finfo
-def jeu(fenetre,nom):
+def jeu(fenetre,nom,pdp):
 
     def appel_info():
         Finfo.info(fenetre)
@@ -19,9 +19,14 @@ def jeu(fenetre,nom):
     #nom du joueur + pdp
     canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")
     canvaJeu.create_oval(95,55,160,120)
-    canvaJeu.create_text(127,135,text=nom,font=("Arial",15)) 
+    canvaJeu.create_text(127,135,text=nom,font=("Arial",15))
+    canvaJeu.pdp1=PhotoImage(file="pdp1.png")
+    canvaJeu.pdp2=PhotoImage(file="pdp2.png")
+    pdps=[canvaJeu.pdp1,canvaJeu.pdp2]
+    canvaJeu.create_image(127.5,112.5,image=pdps[pdp])
 
-    #meilleur score
+
+    #meilleur (score)
     canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")
     canvaJeu.create_text(350,75,text="Meilleur score :",font=("Arial",15))
     canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
