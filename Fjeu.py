@@ -16,6 +16,15 @@ def jeu(fenetre,nom,pdp):
     canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
     canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
     
+    #panneau
+    canvaJeu.imgPan = PhotoImage(file="panneau.png")
+    canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
+    def pan(x,y,Dx,Dy):
+        x+=Dx
+        y+=Dy
+        if (x>500 and x<750) and (y>200 and y<300):
+            return True
+
     #nom du joueur + pdp
     canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")
     canvaJeu.create_oval(95,55,160,120)
@@ -45,19 +54,19 @@ def jeu(fenetre,nom,pdp):
     
     def up(event):
         x,y=canvaJeu.coords("perso1")
-        if (y-10)>200:
+        if (y-10)>200 and not pan(x,y,0,-10):
             canvaJeu.move("perso1",0,-10)
     def down(event):
         x,y=canvaJeu.coords("perso1")
-        if (y+10)<600:
+        if (y+10)<600 and not pan(x,y,0,10):
             canvaJeu.move("perso1",0,10)
     def right(event):
         x,y=canvaJeu.coords("perso1")
-        if (x+10)<1150:
+        if (x+10)<1150 and not pan(x,y,10,0):
             canvaJeu.move("perso1",10,0)
     def left(event):
         x,y=canvaJeu.coords("perso1")
-        if (x-10)>150:
+        if (x-10)>150 and not pan(x,y,-10,0):
             canvaJeu.move("perso1",-10,0)
     
         
@@ -69,10 +78,6 @@ def jeu(fenetre,nom,pdp):
     fenetre.bind('<KeyPress-Right>', right)
     fenetre.bind('<KeyPress-Left>', left)
     
-    
-    
-    canvaJeu.imgPan = PhotoImage(file="panneau.png")
-    canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
     
     canvaJeu.pack()
     
