@@ -2,16 +2,41 @@ from tkinter import *
 import Fjeu, Finfo,FinfoPlantes
 
 fenetre = Tk()
-
+nom=""
 def accueil():
+    global actu
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
-       
+
+    def coord_souris(event):
+        global actu
+        #print(actu)
+        #actu+=1
+        #print(actu)
+        x = event.x
+        y = event.y
+        if (x>800 and x<1200) and (y>350 and y<700):#"btn" jouer
+            canvaAcc.destroy()
+            appel_jeu()
+        if (x>500 and x<550) and (y>250 and y<350): #skin de gauche
+            if actu==0:
+                actu=len(skin)-1
+            else:
+                actu-=1
+            canvaAcc.itemconfigure("perso",image=skin[actu])
+ 
+        if (x>700 and x<750) and (y>250 and y<350): #skin de droite
+            if actu==(len(skin)-1):
+                actu=0
+            else:
+                actu+=1
+            canvaAcc.itemconfigure("perso",image=skin[actu])
+ 
+
     def recupNom():
        global nom
        nom=nomDonne.get()
        entreeNom.configure(bg="green")
-    
         
     canvaAcc = Canvas(fenetre, width=1300, height=645)
     canvaAcc.fondBG = PhotoImage(file="fond_lavande.png")
@@ -44,6 +69,8 @@ def accueil():
     canvaAcc.create_oval(500,425,800,525,fill="red")
     canvaAcc.imgPerso1 = PhotoImage(file="bonhomme1.png")
     canvaAcc.imgPerso2 = PhotoImage(file="bonhomme2.png")
+    skin=[canvaAcc.imgPerso1,canvaAcc.imgPerso2]
+    actu=0
     canvaAcc.create_image(600,200, anchor='nw',image=canvaAcc.imgPerso1,tag="perso")
     canvaAcc.create_polygon((500,300),(550,250),(550,350))
     canvaAcc.create_polygon((700,350),(700,250),(750,300))
@@ -54,20 +81,11 @@ def accueil():
     btnValiderNom.place(x=700,y=550)
     
     canvaAcc.pack()
-   
-    def coord_souris(event):
-        x = event.x
-        y = event.y
-        if (x>800 and x<1200) and (y>350 and y<700):
-            canvaAcc.destroy()
-            appel_jeu()
-        if (x>500 and x<550) and (y>250 and y<350):
-            canvaAcc.itemconfigure("perso",image=canvaAcc.imgPerso2)
-        if (x>700 and x<750) and (y>250 and y<350):
-            canvaAcc.itemconfigure("perso",image=canvaAcc.imgPerso1)
-            
+          
     fenetre.bind('<Button-1>', coord_souris)
     
+    
+
 def appel_jeu():
     Fjeu.jeu(fenetre,nom)
 
@@ -76,6 +94,7 @@ def appel_info():
     
 def appel_infoPlantes():
     FinfoPlantes.infoPlantes(fenetre) 
+
     
 accueil()
 fenetre.mainloop()
