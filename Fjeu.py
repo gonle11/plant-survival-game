@@ -23,7 +23,7 @@ def jeu(fenetre,nom,pdp):
     canvaJeu.pdp1=PhotoImage(file="pdp1.png")
     canvaJeu.pdp2=PhotoImage(file="pdp2.png")
     pdps=[canvaJeu.pdp1,canvaJeu.pdp2]
-    canvaJeu.create_image(127.5,112.5,image=pdps[pdp])
+    canvaJeu.create_image(127.5,87.5,image=pdps[pdp])
 
 
     #meilleur (score)
