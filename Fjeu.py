@@ -53,11 +53,11 @@ def jeu(fenetre,nom,pdp):
             canvaJeu.move("perso1",0,10)
     def right(event):
         x,y=canvaJeu.coords("perso1")
-        if (x+10)<1200:
+        if (x+10)<1150:
             canvaJeu.move("perso1",10,0)
     def left(event):
         x,y=canvaJeu.coords("perso1")
-        if (x-10)>50:
+        if (x-10)>150:
             canvaJeu.move("perso1",-10,0)
     
         
