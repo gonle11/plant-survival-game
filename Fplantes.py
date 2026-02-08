@@ -6,7 +6,7 @@ def plante1(Pan):
     canva1=Canvas(plt1,width=300, height=200)
     canva1.bg=PhotoImage(file="bgpanneau.png")
     canva1.create_image(150,100,image=canva1.bg)
-    canva1.create_text(150,100,text="Plante 1")
+    canva1.create_text(150,25,text="Plante 1",font=("Times",25))
     canva1.pack()
 
 def plante2(Pan):
@@ -53,7 +53,7 @@ def plante6(Pan):
     canva6.create_image(150,100,image=canva6.bg)
     canva6.create_text(150,100,text="Plante 6")
     canva6.pack()
-    
+
 def plante7(Pan):
     print("plante 7")
     
