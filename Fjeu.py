@@ -90,7 +90,7 @@ def jeu(fenetre,nom,pdp):
         if (x>900 and x<1000) and (y>50 and y<150):
             pause()
         if (x>1050 and x<1250) and(y>50 and y<150):
-            info()
+            appel_info()
             
     fenetre.bind('<Button-1>', coord_souris)
 
