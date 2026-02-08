@@ -1,4 +1,5 @@
 from tkinter import *
+import Fplantes
 
 def panneau(fenetre):
     Pan=Toplevel(fenetre)
@@ -10,8 +11,10 @@ def panneau(fenetre):
     
     #plante 1
     canvaPan.plante1=PhotoImage(file="plante1.png")
-    btn1=Button(Pan,font=("Arial",15),image=canvaPan.plante1)#,command=plante1)
+    btn1=Button(Pan,font=("Arial",15),image=canvaPan.plante1,command=appel_plante1)
     btn1.place(x=75,y=75)
+    def appel_plante1():
+        Fplantes.plante1(fenetre)
 
     #plante 2
     canvaPan.plante2=PhotoImage(file="plante1.png")
