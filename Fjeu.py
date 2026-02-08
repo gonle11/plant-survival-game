@@ -56,7 +56,7 @@ def jeu(fenetre,nom,pdp):
         x,y=canvaJeu.coords("perso1")
         if (y-10)>200 and not pan(x,y,0,-10):
             canvaJeu.move("perso1",0,-10)
-        elif pan(x,y,0,-10):
+        elif pan(x,y,0,-10) :
             Fpanneau.panneau(fenetre)
 
     def down(event):
@@ -70,7 +70,7 @@ def jeu(fenetre,nom,pdp):
         x,y=canvaJeu.coords("perso1")
         if (x+10)<1150 and not pan(x,y,10,0):
             canvaJeu.move("perso1",10,0)
-        elif pan(x,y,10,0):
+        elif pan(x,y,10,0) :
             Fpanneau.panneau(fenetre)
 
     def left(event):
