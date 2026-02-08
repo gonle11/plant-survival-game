@@ -1,13 +1,35 @@
 from tkinter import *
+from tkinter.ttk import *
+import sqlite3
+import sys
+import traceback
 
 def plante1(Pan):
     print("plante 1")
-    plt1=Toplevel(Pan)
+    plt1=Toplevel(Pan,width=100,height=50)
+    """
     canva1=Canvas(plt1,width=300, height=200)
     canva1.bg=PhotoImage(file="bgpanneau.png")
     canva1.create_image(150,100,image=canva1.bg)
     canva1.create_text(150,25,text="Plante 1",font=("Times",25))
     canva1.pack()
+    """
+    tableau = Treeview(plt1, columns=('niv','p1', 'p2', 'p3','p4'))
+    
+    tableau.heading('niv', text='niveau')
+    tableau.heading('p1', text='parametre 1')
+    tableau.heading('p2', text='parametre 2')
+    tableau.heading('p3', text='parametre 3')
+    tableau.heading('p4', text='parametre 4')
+
+    tableau['show'] = 'headings'
+
+    tableau.insert('', 'end', iid="a", values=('niv1','1/1', '1/2', '1/3','1/4'))
+    tableau.insert('', 'end', iid="b", values=('niv2','2/1', '2/2', '2/3','2/4'))
+    tableau.insert('', 'end', iid="c", values=('niv3','3/1', '3/2', '3/3','3/4'))
+    tableau.insert('', 'end', iid="d", values=('niv4','4/1', '4/2', '4/3','4/4'))
+
+    tableau.pack()
 
 def plante2(Pan):
     print("plante 2")
