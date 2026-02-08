@@ -57,28 +57,28 @@ def jeu(fenetre,nom,pdp):
         if (y-10)>200 and not pan(x,y,0,-10):
             canvaJeu.move("perso1",0,-10)
         elif pan(x,y,0,-10):
-            Fpanneau.panneau()
+            Fpanneau.panneau(fenetre)
 
     def down(event):
         x,y=canvaJeu.coords("perso1")
         if (y+10)<600 and not pan(x,y,0,10):
             canvaJeu.move("perso1",0,10)
         elif pan(x,y,0,10):
-            Fpanneau.panneau()
+            Fpanneau.panneau(fenetre)
 
     def right(event):
         x,y=canvaJeu.coords("perso1")
         if (x+10)<1150 and not pan(x,y,10,0):
             canvaJeu.move("perso1",10,0)
         elif pan(x,y,10,0):
-            Fpanneau.panneau()
+            Fpanneau.panneau(fenetre)
 
     def left(event):
         x,y=canvaJeu.coords("perso1")
         if (x-10)>150 and not pan(x,y,-10,0):
             canvaJeu.move("perso1",-10,0)
         elif pan(x,y,-10,0):
-            Fpanneau.panneau()
+            Fpanneau.panneau(fenetre)
         
     
     canvaJeu.imgPerso=PhotoImage(file="perso 1.png")
