@@ -6,14 +6,18 @@ import traceback
 
 def plante1(Pan):
     print("plante 1")
-    plt1=Toplevel(Pan,width=100,height=50)
-    """
-    canva1=Canvas(plt1,width=300, height=200)
+    plt1=Toplevel(Pan,width=1000,height=150)
+    
+    canva1=Canvas(plt1,width=1000, height=150)
     canva1.bg=PhotoImage(file="bgpanneau.png")
     canva1.create_image(150,100,image=canva1.bg)
-    canva1.create_text(150,25,text="Plante 1",font=("Times",25))
+    canva1.create_text(500,25,text="Plante 1",font=("Times",25))
     canva1.pack()
-    """
+    
+    style= Style(plt1)
+    style.theme_use("clam")
+    style.configure("Treeview", background="peru",fieldbackground="yellow",foreground="black")
+
     tableau = Treeview(plt1, columns=('niv','p1', 'p2', 'p3','p4'))
     
     tableau.heading('niv', text='niveau')
@@ -29,7 +33,7 @@ def plante1(Pan):
     tableau.insert('', 'end', iid="c", values=('niv3','3/1', '3/2', '3/3','3/4'))
     tableau.insert('', 'end', iid="d", values=('niv4','4/1', '4/2', '4/3','4/4'))
 
-    tableau.pack()
+    tableau.place(x=0,y=50)
 
 def plante2(Pan):
     print("plante 2")
