@@ -5,7 +5,7 @@ import sys
 import traceback
 
 def canva(fen,txt):
-    canva1=Canvas(fen,width=1000, height=150)
+    canva1=Canvas(fen,width=1000, height=130)
     canva1.bg=PhotoImage(file="bgpanneau.png")
     canva1.create_image(150,100,image=canva1.bg)
     canva1.create_text(500,25,text=txt,font=("Times",25))
@@ -34,7 +34,7 @@ def tab(fen,unun,undeux,untrois,unquatre,deuxun,deuxdeux,deuxtrois,deuxquatre,tr
 
 
 def plante1(Pan):
-    plt1=Toplevel(Pan,width=1000,height=150)
+    plt1=Toplevel(Pan)
     canva(plt1,"Plante 1")
     tab(plt1,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
