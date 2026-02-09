@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import font
 import Finfo, Fpanneau, Finfoplt
+
 def jeu(fenetre,nom,pdp):
 
     def appel_info():
