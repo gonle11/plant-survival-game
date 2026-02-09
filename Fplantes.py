@@ -11,18 +11,18 @@ def canva(fen,txt):
     canva1.create_text(500,25,text=txt,font=("Times",25))
     canva1.pack()
 
-def tab(fen,unun,undeux,untrois,unquatre,deuxun,deuxdeux,deuxtrois,deuxquatre,troisun,troisdeux,troistrois,troisquatre):
+def tab(fen,p1,p2,p3,p4,unun,undeux,untrois,unquatre,deuxun,deuxdeux,deuxtrois,deuxquatre,troisun,troisdeux,troistrois,troisquatre):
     style= Style(fen)
     style.theme_use("clam")
     style.configure("Treeview", background="peru",foreground="black")
 
-    tableau = Treeview(fen, columns=('niv','p1', 'p2', 'p3','p4'))
+    tableau = Treeview(fen, columns=('niv','pa1', 'pa2', 'pa3','pa4'))
     
     tableau.heading('niv', text='niveau')
-    tableau.heading('p1', text='parametre 1')
-    tableau.heading('p2', text='parametre 2')
-    tableau.heading('p3', text='parametre 3')
-    tableau.heading('p4', text='parametre 4')
+    tableau.heading('pa1', text=p1)
+    tableau.heading('pa2', text=p2)
+    tableau.heading('pa3', text=p3)
+    tableau.heading('pa4', text=p4)
 
     tableau['show'] = 'headings'
 
@@ -32,11 +32,10 @@ def tab(fen,unun,undeux,untrois,unquatre,deuxun,deuxdeux,deuxtrois,deuxquatre,tr
 
     tableau.place(x=0,y=50)
 
-
 def plante1(Pan):
     plt1=Toplevel(Pan)
-    canva(plt1,"Plante 1")
-    tab(plt1,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt1,"Epipremnum aureum")
+    tab(plt1,'Eau (entre 40 et 60 cL)','Lumière (entre 40 et 70 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 45 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
     
 def plante2(Pan):
