@@ -40,61 +40,57 @@ def plante1(Pan):
     
 def plante2(Pan):
     plt2=Toplevel(Pan)
-    canva(plt2,"Plante 2")
-    tab(plt2,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-
+    canva(plt2,"Sansevieria trifasciata")
+    tab(plt2,'Eau (entre 30 et 50 cL)','Lumière (entre 30 et 80 %)','Humidité(entre 20 et 40 %)','Chaleur (entre 45 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante3(Pan):
     plt3=Toplevel(Pan)
-    canva(plt3,"Plante 3")
-    tab(plt3,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt3,"Chlorophytum comosum")
+    tab(plt3,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
-    
 def plante4(Pan):
     plt4=Toplevel(Pan)
-    canva(plt4,"Plante 4")
-    tab(plt4,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-
+    canva(plt4,"Ficus elastica")
+    tab(plt4,'Eau (entre 50 et 70 cL)','Lumière (entre 60 et 80 %)','Humidité(entre 50 et 70 %)','Chaleur (entre 55 et 70 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante5(Pan):
     plt5=Toplevel(Pan)
-    canva(plt5,"Plante 5")
-    tab(plt5,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-
+    canva(plt5,"Monstera deliciosa")
+    tab(plt5,'Eau (entre 55 et 75 cL)','Lumière (entre 60 et 80 %)','Humidité(entre 60 et 80 %)','Chaleur (entre 60 et 75 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
     
 def plante6(Pan):
     plt6=Toplevel(Pan)
     canva(plt6,"Plante 6")
-    tab(plt6,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    tab(plt6,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante7(Pan):
     plt7=Toplevel(Pan)
     canva(plt7,"Plante 7")
-    tab(plt7,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    tab(plt7,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
     
 def plante8(Pan):
     plt8=Toplevel(Pan)
     canva(plt8,"Plante 8")
-    tab(plt8,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    tab(plt8,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 
 def plante9(Pan):
     plt9=Toplevel(Pan)
     canva(plt9,"Plante 9")
-    tab(plt9,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-    
+    tab(plt9,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
 def plante10(Pan):
     plt10=Toplevel(Pan)
     canva(plt10,"Plante 10")
-    tab(plt10,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    tab(plt10,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante11(Pan):
     plt11=Toplevel(Pan)
     canva(plt11,"Plante 11")
-    tab(plt11,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-    
+    tab(plt11,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
 def plante12(Pan):
     plt12=Toplevel(Pan)
     canva(plt12,"Plante 12")
-    tab(plt12,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    tab(plt12,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
