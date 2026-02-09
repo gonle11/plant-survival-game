@@ -60,20 +60,18 @@ def plante5(Pan):
     
 def plante6(Pan):
     plt6=Toplevel(Pan)
-    canva(plt6,"Plante 6")
-    tab(plt6,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt6,"Spathiphyllum wallisii")
+    tab(plt6,'Eau (entre 50 et 70 cL)','Lumière (entre 40 et 60 %)','Humidité(entre 70 et 90 %)','Chaleur (entre 55 et 70 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante7(Pan):
     plt7=Toplevel(Pan)
-    canva(plt7,"Plante 7")
-    tab(plt7,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt7,"Dracaena marginata")
+    tab(plt7,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 70 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 55 et 70 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
-    
 def plante8(Pan):
     plt8=Toplevel(Pan)
-    canva(plt8,"Plante 8")
-    tab(plt8,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
-
+    canva(plt8,"Calathea orbifolia")
+    tab(plt8,'Eau (entre 60 et 70 cL)','Lumière (entre 40 et 60 %)','Humidité(entre 80 et 100 %)','Chaleur (entre 60 et 70 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante9(Pan):
     plt9=Toplevel(Pan)
