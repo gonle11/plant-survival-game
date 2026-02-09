@@ -8,16 +8,21 @@ def infoplt1(fenetre):
 
     
     valueHum = IntVar()
-    scaleHum=Scrollbar(Plt,orient=HORIZONTAL,bg="peru")
+    scaleHum=Scale(Plt,variable=valueHum,orient=HORIZONTAL,bg="peru")
     Humid=valueHum.get()
-    scaleHum.place(x=25,y=25)
+    scaleHum.place(x=300,y=50)
+    canvaPlt.create_text(100,50,text="Humidité : ")
 
-    valueLum = DoubleVar()
-    scaleLum=Scrollbar(Plt)
-    scaleLum.pack(anchor=CENTER)#lace(x=25,y=50)
+    valueLum = IntVar()
+    scaleLum=Scale(Plt,variable=valueLum,orient=HORIZONTAL,bg="peru")
+    Lum=valueLum.get()
+    scaleLum.place(x=300,y=100)
+    canvaPlt.create_text(100,100,text="Luminosité : ")
 
-    valueChal = DoubleVar()
-    scaleChal=Scrollbar(Plt)
-    scaleChal.pack()#lace(x=25,y=75)
+    valueChal = IntVar()
+    scaleChal=Scale(Plt,variable=valueChal,orient=HORIZONTAL,bg="peru")
+    Chal=valueChal.get()
+    scaleChal.place(x=300,y=150)
+    canvaPlt.create_text(100,150,text="Chaleur : ")
 
     canvaPlt.pack()
