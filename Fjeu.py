@@ -6,6 +6,9 @@ def jeu(fenetre,nom,pdp):
     def appel_info():
         Finfo.info(fenetre)
     
+    def appel_infoplt1():
+        Finfoplt.infoplt1(fenetre)
+    
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
     
@@ -55,7 +58,8 @@ def jeu(fenetre,nom,pdp):
     #plante
     canvaJeu.plt1=PhotoImage(file="top-view_1.png")
     canvaJeu.create_image(1100,300,image=canvaJeu.plt1)
-    btnplt1=Button(fenetre,font=("Arial",30),width="8",text="Plante 1",bg="peru",command=Finfoplt.infoplt1)
+    btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
+    btnplt1.place(x=1050,y=350)
     
 
     def up(event):
