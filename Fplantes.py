@@ -4,21 +4,19 @@ import sqlite3
 import sys
 import traceback
 
-def plante1(Pan):
-    print("plante 1")
-    plt1=Toplevel(Pan,width=1000,height=150)
-    
-    canva1=Canvas(plt1,width=1000, height=150)
+def canva(fen,txt):
+    canva1=Canvas(fen,width=1000, height=150)
     canva1.bg=PhotoImage(file="bgpanneau.png")
     canva1.create_image(150,100,image=canva1.bg)
-    canva1.create_text(500,25,text="Plante 1",font=("Times",25))
+    canva1.create_text(500,25,text=txt,font=("Times",25))
     canva1.pack()
-    
-    style= Style(plt1)
-    style.theme_use("clam")
-    style.configure("Treeview", background="peru",fieldbackground="yellow",foreground="black")
 
-    tableau = Treeview(plt1, columns=('niv','p1', 'p2', 'p3','p4'))
+def tab(fen,unun,undeux,untrois,unquatre,deuxun,deuxdeux,deuxtrois,deuxquatre,troisun,troisdeux,troistrois,troisquatre):
+    style= Style(fen)
+    style.theme_use("clam")
+    style.configure("Treeview", background="peru",foreground="black")
+
+    tableau = Treeview(fen, columns=('niv','p1', 'p2', 'p3','p4'))
     
     tableau.heading('niv', text='niveau')
     tableau.heading('p1', text='parametre 1')
@@ -28,72 +26,76 @@ def plante1(Pan):
 
     tableau['show'] = 'headings'
 
-    tableau.insert('', 'end', iid="a", values=('niv1','1/1', '1/2', '1/3','1/4'))
-    tableau.insert('', 'end', iid="b", values=('niv2','2/1', '2/2', '2/3','2/4'))
-    tableau.insert('', 'end', iid="c", values=('niv3','3/1', '3/2', '3/3','3/4'))
-    tableau.insert('', 'end', iid="d", values=('niv4','4/1', '4/2', '4/3','4/4'))
+    tableau.insert('', 'end', iid="a", values=('niveau 1',unun, undeux, untrois ,unquatre))
+    tableau.insert('', 'end', iid="b", values=('niveau 2',deuxun, deuxdeux, deuxtrois,deuxquatre))
+    tableau.insert('', 'end', iid="c", values=('niveau 3',troisun, troisdeux, troistrois,troisquatre))
 
     tableau.place(x=0,y=50)
 
+
+def plante1(Pan):
+    plt1=Toplevel(Pan,width=1000,height=150)
+    canva(plt1,"Plante 1")
+    tab(plt1,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
+    
 def plante2(Pan):
-    print("plante 2")
     plt2=Toplevel(Pan)
-    canva2=Canvas(plt2,width=300, height=200)
-    canva2.bg=PhotoImage(file="bgpanneau.png")
-    canva2.create_image(150,100,image=canva2.bg)
-    canva2.create_text(150,100,text="Plante 2")
-    canva2.pack()
+    canva(plt2,"Plante 2")
+    tab(plt2,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
 
 def plante3(Pan):
-    print("plante 3")
     plt3=Toplevel(Pan)
-    canva3=Canvas(plt3,width=300, height=200)
-    canva3.bg=PhotoImage(file="bgpanneau.png")
-    canva3.create_image(150,100,image=canva3.bg)
-    canva3.create_text(150,100,text="Plante 3")
-    canva3.pack()
+    canva(plt3,"Plante 3")
+    tab(plt3,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
     
 def plante4(Pan):
-    print("plante 4")
     plt4=Toplevel(Pan)
-    canva4=Canvas(plt4,width=300, height=200)
-    canva4.bg=PhotoImage(file="bgpanneau.png")
-    canva4.create_image(150,100,image=canva4.bg)
-    canva4.create_text(150,100,text="Plante 4")
-    canva4.pack()
+    canva(plt4,"Plante 4")
+    tab(plt4,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
 
 def plante5(Pan):
-    print("plante 5")
     plt5=Toplevel(Pan)
-    canva5=Canvas(plt5,width=300, height=200)
-    canva5.bg=PhotoImage(file="bgpanneau.png")
-    canva5.create_image(150,100,image=canva1.bg)
-    canva5.create_text(150,100,text="Plante 5")
-    canva5.pack()
+    canva(plt5,"Plante 5")
+    tab(plt5,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
     
 def plante6(Pan):
-    print("plante 6")
     plt6=Toplevel(Pan)
-    canva6=Canvas(plt6,width=300, height=200)
-    canva6.bg=PhotoImage(file="bgpanneau.png")
-    canva6.create_image(150,100,image=canva6.bg)
-    canva6.create_text(150,100,text="Plante 6")
-    canva6.pack()
+    canva(plt6,"Plante 6")
+    tab(plt6,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante7(Pan):
-    print("plante 7")
+    plt7=Toplevel(Pan)
+    canva(plt7,"Plante 7")
+    tab(plt7,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
     
 def plante8(Pan):
-    print("plante 8")
+    plt8=Toplevel(Pan)
+    canva(plt8,"Plante 8")
+    tab(plt8,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+
 
 def plante9(Pan):
-    print("plante 9")
+    plt9=Toplevel(Pan)
+    canva(plt9,"Plante 9")
+    tab(plt9,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
     
 def plante10(Pan):
-    print("plante 10")
+    plt10=Toplevel(Pan)
+    canva(plt10,"Plante 10")
+    tab(plt10,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante11(Pan):
-    print("plante 11")
+    plt11=Toplevel(Pan)
+    canva(plt11,"Plante 11")
+    tab(plt11,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
     
 def plante12(Pan):
-    print("plante 12")
+    plt12=Toplevel(Pan)
+    canva(plt12,"Plante 12")
+    tab(plt12,'1/1','1/2','1/3','1/4','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
