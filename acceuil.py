@@ -10,9 +10,6 @@ def accueil():
 
     def coord_souris(event):
         global actu
-        #print(actu)
-        #actu+=1
-        #print(actu)
         x = event.x
         y = event.y
         if (x>800 and x<1200) and (y>350 and y<700):#"btn" jouer
