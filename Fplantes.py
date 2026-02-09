@@ -75,20 +75,20 @@ def plante8(Pan):
 
 def plante9(Pan):
     plt9=Toplevel(Pan)
-    canva(plt9,"Plante 9")
-    tab(plt9,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt9,"Alocasia amazonica")
+    tab(plt9,'Eau (entre 65 et 75 cL)','Lumière (entre 60 et 80 %)','Humidité(entre 80 et 100 %)','Chaleur (entre 65 et 75 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante10(Pan):
     plt10=Toplevel(Pan)
-    canva(plt10,"Plante 10")
-    tab(plt10,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt10,"Ficus lyrata")
+    tab(plt10,'Eau (entre 55 et 65 cL)','Lumière (entre 70 et 90 %)','Humidité(entre 50 et 70 %)','Chaleur (entre 60 et 70 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante11(Pan):
     plt11=Toplevel(Pan)
-    canva(plt11,"Plante 11")
-    tab(plt11,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt11,"Cactus ferocactus")
+    tab(plt11,'Eau (entre 20 et 40 cL)','Lumière (entre 90 et 100 %)','Humidité(entre 10 et 20 %)','Chaleur (entre 75 et 90 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
 
 def plante12(Pan):
     plt12=Toplevel(Pan)
-    canva(plt12,"Plante 12")
-    tab(plt12,'Eau (entre 45 et 65 cL)','Lumière (entre 50 et 80 %)','Humidité(entre 40 et 60 %)','Chaleur (entre 50 et 65 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
+    canva(plt12,"Nepenthes alata")
+    tab(plt12,'Eau (entre 70 et 80 cL)','Lumière (entre 70 et 90 %)','Humidité(entre 90 et 100 %)','Chaleur (entre 70 et 80 %)','-4cl/sec','-4%/sec','-4%/sec','-4%/sec','2/1','2/2','2/3','2/4','3/1','3/2','3/3','3/4')
