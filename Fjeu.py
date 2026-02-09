@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import font
-import Finfo, Fpanneau
+import Finfo, Fpanneau, Finfoplt
 def jeu(fenetre,nom,pdp):
 
     def appel_info():
@@ -53,9 +53,11 @@ def jeu(fenetre,nom,pdp):
     btnCommentJouer.place(x=1050,y=50)
 
     #plante
-    canvaJeu.plt1=PhotoImage(file="planteEX.png")
+    canvaJeu.plt1=PhotoImage(file="top-view_1.png")
     canvaJeu.create_image(1100,300,image=canvaJeu.plt1)
+    btnplt1=Button(fenetre,font=("Arial",30),width="8",text="Plante 1",bg="peru",command=Finfoplt.infoplt1)
     
+
     def up(event):
         x,y=canvaJeu.coords("perso1")
         if (y-10)>200 and not pan(x,y,0,-10):
