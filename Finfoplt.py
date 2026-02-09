@@ -1,28 +1,23 @@
 from tkinter import *
 
-def recup_hum():
-    global Humid
-    Humid=valueHum.get()
+def recup_hum(Humid):
     print(Humid)
 
 
-def recup_lum():
-    global Lumin
-    Lumin=valueLum.get()
+def recup_lum(Lumin):
     print(Lumin)
 
-def recup_chal():
-    global Chal
-    Chal=valueChal.get()
+def recup_chal(Chal):
     print(Chal)
 
 def ajt_eau():
     global eauActu
     eauActu+=10
     print(eauActu)
+    canvaPlt.itemconfigure("eau",text="(actuelement : {} cl)".format(eauActu))
 
-def canva (fenetre,eauActu,humi,lumi,chal):
-    global valueHum, valueLum, valueChal
+def canva (fenetre,humi,lumi,chal):
+    global valueHum, valueLum, valueChal,canvaPlt
     Plt=Toplevel(fenetre,width=500,height=500)
 
     canvaPlt=Canvas(Plt,width=500,height=300)
@@ -30,35 +25,31 @@ def canva (fenetre,eauActu,humi,lumi,chal):
     canvaPlt.create_image(350,250,image=canvaPlt.bg)
 
     valueHum = IntVar()
-    scaleHum=Scale(Plt,variable=valueHum,orient=HORIZONTAL,bg="peru")
+    scaleHum=Scale(Plt,variable=valueHum,orient=HORIZONTAL,bg="peru",command=recup_hum)
     scaleHum.set(humi)
     scaleHum.place(x=300,y=50)
     canvaPlt.create_text(133,75,text="Humidité : ",font=("Times",35))
-    btnHum=Button(Plt,text="Valider",background="peru",command=recup_hum)
-    btnHum.place(x=450,y=50)
 
     valueLum = IntVar()
-    scaleLum=Scale(Plt,variable=valueLum,orient=HORIZONTAL,bg="peru")
+    scaleLum=Scale(Plt,variable=valueLum,orient=HORIZONTAL,bg="peru",command=recup_lum)
     scaleLum.set(lumi)
     scaleLum.place(x=300,y=100)
     canvaPlt.create_text(150,120,text="Luminosité : ",font=("Times",35))
-    btnLum=Button(Plt,text="Valider",background="peru",command=recup_lum)
-    btnLum.place(x=450,y=100)
 
     valueChal = IntVar()
-    scaleChal=Scale(Plt,variable=valueChal,orient=HORIZONTAL,bg="peru")
+    scaleChal=Scale(Plt,variable=valueChal,orient=HORIZONTAL,bg="peru",command=recup_chal)
     scaleChal.set(chal)
     scaleChal.place(x=300,y=150)
     canvaPlt.create_text(120,175,text="Chaleur : ",font=("Times",35))
-    btnChal=Button(Plt,text="Valider",background="peru",command=recup_chal)
-    btnChal.place(x=450,y=150)
 
     canvaPlt.create_text(85,215,text="Eau :",font=("Times",35))
-    canvaPlt.create_text(250,225,text="(actuelement : {} cl)".format(eauActu),font=("Times",15))
+    canvaPlt.create_text(250,225,text="(actuelement : {} cl)".format(eauActu),font=("Times",15),tag="eau")
     btnAjoutEau=Button(Plt,text="Ajouter \n de l'eau",background="blue",command=ajt_eau)
     btnAjoutEau.place(x=400,y=200)
 
     canvaPlt.pack()
 
 def infoplt1(fenetre):
-    canva(fenetre,35,45,65,87)
+    global eauActu
+    eauActu=35
+    canva(fenetre,45,65,87)
