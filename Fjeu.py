@@ -51,6 +51,10 @@ def jeu(fenetre,nom,pdp):
     #comment jouer
     btnCommentJouer=Button(fenetre,font=("Arial",30),width="8",text="Comment \n jouer ? ",bg="#b4b4b4",command=appel_info)
     btnCommentJouer.place(x=1050,y=50)
+
+    #plante
+    canvaJeu.plt1=PhotoImage(file="planteEX.png")
+    canvaJeu.create_image(1100,300,image=canvaJeu.plt1)
     
     def up(event):
         x,y=canvaJeu.coords("perso1")
