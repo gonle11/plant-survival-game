@@ -2,6 +2,14 @@ from tkinter import *
 from tkinter import font
 
 def infoPlantes(fenetre):
+
+        def plt1():
+                InfoP1= Toplevel(InfoPlantes, width=600, height=400)
+                canva1=Canvas(InfoP1,width=600,height=400,background="#b4b4b4")
+                canva1.create_text(300,30,text="Epipremnum aureum ", font=("Times",50))
+                canva1.create_text(315,150,text="L’Epipremnum aureum, ou Pothos ou Scindapsus doré est une espèce \n de plantes à fleurs de la famille des Aracées. Elle est originaire de       \n Polynésie française. C’est une plante grimpante qui s’accroche aux      \n troncs d’arbre et aux rochers grâce à ses racines aérienne. C’est une       \n plante sempervirente. Elle est beaucoup cultivée comme plante       \n d’intérieur comme dans le jeu ! ", font=("Times",15))
+                canva1.pack()
+
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
         btn1 = Button(InfoPlantes, text="Epipremnum aureum ",command=plt1)
         btn2 = Button(InfoPlantes, text="Sansevieria trifasciata")#,command=plt2)
@@ -28,5 +36,3 @@ def infoPlantes(fenetre):
         btn11.place(x=25,y=275)
         btn12.place(x=25,y=300)
 
-def plt1():
-        print("plt1")
