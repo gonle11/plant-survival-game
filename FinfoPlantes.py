@@ -8,6 +8,9 @@ def infoPlantes(fenetre):
                 canva1=Canvas(InfoP1,width=600,height=400,background="#b4b4b4")
                 canva1.create_text(300,30,text="Epipremnum aureum ", font=("Times",50))
                 canva1.create_text(315,150,text="L’Epipremnum aureum, ou Pothos ou Scindapsus doré est une espèce \n de plantes à fleurs de la famille des Aracées. Elle est originaire de       \n Polynésie française. C’est une plante grimpante qui s’accroche aux      \n troncs d’arbre et aux rochers grâce à ses racines aérienne. C’est une       \n plante sempervirente. Elle est beaucoup cultivée comme plante       \n d’intérieur comme dans le jeu ! ", font=("Times",15))
+                canva1.create_rectangle(25,250,375,350,fill="#C98E26")
+                canva1.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
+                canva1.create_text(200,325,font=("Times",10),text="L’épithète spécifique aureum de son nom latin vient du latin \n aurĕus, a, um qui signifie « doré, de couleur d’or » par \n allusion aux mouchetures jaunes des feuilles d’une variété ")
                 canva1.pack()
 
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
