@@ -35,11 +35,23 @@ def infoPlantes(fenetre):
               canva2.create_image(485,300,image=canva2.img)
               canva2.pack()
         
+        def plt3():
+              InfoP3= Toplevel(InfoPlantes, width=600, height=400)
+              canva3=Canvas(InfoP3,width=600,height=400,background="#b4b4b4")
+              canva3.create_text(300,30,text="Chlorophytum comosum ", font=("Times",45))
+              canva3.create_text(315,130,text="La Chlorophytum comosum ou spider plant en anglais \n est une plante originaire d’afrique orientale \n et du sud. Elle fait partie de la famille des Asparagaceae.\n Elle est souvent utilisée comme plante ornementale d’appartement.", font=("Times",15)) 
+              canva3.create_rectangle(25,250,375,350,fill="#C98E26")
+              canva3.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
+              canva3.create_text(200,325,font=("Times",10),text="Une étude réalisée en 1989 par la NASA \n la classe parmi les plantes dépolluantes,") 
+              canva3.img=PhotoImage(file="Chlorophytum_comosum.png")
+              canva3.create_image(485,300,image=canva3.img)
+              canva3.pack()                
+        
 
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
         btn1 = Button(InfoPlantes, text="Epipremnum aureum ",command=plt1)
         btn2 = Button(InfoPlantes, text="Sansevieria trifasciata",command=plt2)
-        btn3 = Button(InfoPlantes, text="Chlorophytum comosum ")#,command=plt3)
+        btn3 = Button(InfoPlantes, text="Chlorophytum comosum ",command=plt3)
         btn4 = Button(InfoPlantes, text="Ficus elastica")#,command=plt4)
         btn5 = Button(InfoPlantes, text="Monstera deliciosa")#,command=plt5)
         btn6 = Button(InfoPlantes, text="Spathiphyllum wallisii")#,command=plt6)
