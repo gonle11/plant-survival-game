@@ -5,12 +5,17 @@ def infoPlantes(fenetre):
 
         def plt1():
                 InfoP1= Toplevel(InfoPlantes, width=600, height=400)
+                def semper():
+                        Semper=Toplevel(InfoP1,width=300,height=100)
+                        canva=Canvas(Semper,width=300,height=100,background="grey")
+                        canva.create_text(150,50,text="Une plante sempervirente est une plante \nqui garde ses feuilles toute l’année ! Ce terme \n vient du latin semper « toujours » et virens « vert »,\n les plantes sont en effet toujours vertes !!")
+                        canva.pack()
                 canva1=Canvas(InfoP1,width=600,height=400,background="#b4b4b4")
                 canva1.create_text(300,30,text="Epipremnum aureum ", font=("Times",50))
-                canva1.create_text(315,130,text="L’Epipremnum aureum, ou Pothos ou Scindapsus doré est une espèce \n de plantes à fleurs de la famille des Aracées. Elle est originaire de       \n Polynésie française. C’est une plante grimpante qui s’accroche aux      \n troncs d’arbre et aux rochers grâce à ses racines aérienne. C’est une       \n plante                                                           ", font=("Times",15))
-                btnSemper=Button(InfoP1,text="sempervirente.",bd=0,bg="#b4b4b4",font=("Times",15,"italic"),fg="grey")
-                btnSemper.place(x=80,y=157)
-                canva1.create_text(300,185,text="                                   Elle est beaucoup cultivée comme plante       \n d’intérieur comme dans le jeu !                         ", font=("Times",15))
+                canva1.create_text(315,130,text="L’Epipremnum aureum, ou Pothos ou Scindapsus doré est une espèce \n de plantes à fleurs de la famille des Aracées. Elle est originaire de       \n Polynésie française. C’est une plante grimpante qui s’accroche aux      \n troncs d’arbre et aux rochers grâce à ses racines aérienne. C’est une       \n plante                                                             ", font=("Times",15))
+                btnSemper=Button(InfoP1,text="sempervirente.",command=semper,bd=0,bg="#b4b4b4",font=("Times",15,"italic"),fg="grey")
+                btnSemper.place(x=78.5,y=158.5)
+                canva1.create_text(300,185,text="                                     Elle est beaucoup cultivée comme plante       \n d’intérieur comme dans le jeu !                         ", font=("Times",15))
                 canva1.create_rectangle(25,250,375,350,fill="#C98E26")
                 canva1.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
                 canva1.create_text(200,325,font=("Times",10),text="L’épithète spécifique aureum de son nom latin vient du latin \n aurĕus, a, um qui signifie « doré, de couleur d’or » par \n allusion aux mouchetures jaunes des feuilles d’une variété ")
