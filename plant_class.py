@@ -5,6 +5,7 @@ class Plant:
         water=50,
         light=50,
         humidity=50,
+        # warmth
         optimal_water=(40, 70),
         optimal_light=(40, 70),
         optimal_humidity=(40, 70),
@@ -28,7 +29,7 @@ class Plant:
 
         self.growth_stage = 1
         self.age = 0
-
+    #comem
     # easy plants
     @staticmethod
     def create_Epipremnum_aureum():
@@ -220,7 +221,7 @@ def create_Nepenthes_alata():
         )
         
     def is_in_optimal_light_range(self):
-            return (
+            return ( 
             self.optimal_light[0] <= self.light <= self.optimal_light[1]
             )
         
@@ -276,6 +277,8 @@ def create_Nepenthes_alata():
         # Death
         if self.health <= 0:
             self.alive = False
+        else:
+            None
 
     
 
