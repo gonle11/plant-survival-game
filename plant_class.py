@@ -29,7 +29,7 @@ class Plant:
 
         self.growth_stage = 1
         self.age = 0
-    #comem
+    #comemjjjjjjj
     # easy plants
     @staticmethod
     def create_Epipremnum_aureum():
