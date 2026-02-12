@@ -11,7 +11,8 @@ def infoPlantes(fenetre):
                 canva1.create_rectangle(25,250,375,350,fill="#C98E26")
                 canva1.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
                 canva1.create_text(200,325,font=("Times",10),text="L’épithète spécifique aureum de son nom latin vient du latin \n aurĕus, a, um qui signifie « doré, de couleur d’or » par \n allusion aux mouchetures jaunes des feuilles d’une variété ")
-                            
+                canva1.img=PhotoImage(file="Epipremnum_aureum.png")
+                canva1.create_image(485,300,image=canva1.img)
                 canva1.pack()
 
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
