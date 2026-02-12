@@ -198,20 +198,20 @@ class Plant:
             difficulty="special"
         )
 
-@staticmethod
-def create_Nepenthes_alata():
-    return Plant(
-        name="Nepenthes alata",
-        water=75,
-        light=80,
-        humidity=95,
-        warmth=75,
-        optimal_water=(70, 80),
-        optimal_light=(70, 90),
-        optimal_humidity=(90, 100),
-        optimal_warmth=(70, 80),
-        difficulty="special"
-    )
+    @staticmethod
+    def create_Nepenthes_alata():
+        return Plant(
+            name="Nepenthes alata",
+            water=75,
+            light=80,
+            humidity=95,
+            warmth=75,
+            optimal_water=(70, 80),
+            optimal_light=(70, 90),
+            optimal_humidity=(90, 100),
+            optimal_warmth=(70, 80),
+            difficulty="special"
+        )
 
 
     
@@ -280,7 +280,7 @@ def create_Nepenthes_alata():
         else:
             None
 
-    
+
 
 
         

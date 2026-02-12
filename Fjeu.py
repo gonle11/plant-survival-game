@@ -1,10 +1,14 @@
 from tkinter import *
 from tkinter import font
-import Finfo
-def jeu(fenetre,nom):
+import Finfo, Fpanneau, Finfoplt
+
+def jeu(fenetre,nom,pdp):
 
     def appel_info():
         Finfo.info(fenetre)
+    
+    def appel_infoplt1():
+        Finfoplt.infoplt1(fenetre)
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -16,12 +20,26 @@ def jeu(fenetre,nom):
     canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
     canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
     
+    #panneau
+    canvaJeu.imgPan = PhotoImage(file="panneau.png")
+    canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
+    def pan(x,y,Dx,Dy):
+        x+=Dx
+        y+=Dy
+        if (x>500 and x<750) and (y>200 and y<300):
+            return True
+
     #nom du joueur + pdp
     canvaJeu.create_rectangle(50,50,200,150,fill="#b4b4b4")
     canvaJeu.create_oval(95,55,160,120)
-    canvaJeu.create_text(127,135,text=nom,font=("Arial",15)) 
+    canvaJeu.create_text(127,135,text=nom,font=("Arial",15))
+    canvaJeu.pdp1=PhotoImage(file="pdp1.png")
+    canvaJeu.pdp2=PhotoImage(file="pdp2.png")
+    pdps=[canvaJeu.pdp1,canvaJeu.pdp2]
+    canvaJeu.create_image(127.5,87.5,image=pdps[pdp])
 
-    #meilleur score
+
+    #meilleur (score)
     canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")
     canvaJeu.create_text(350,75,text="Meilleur score :",font=("Arial",15))
     canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
@@ -37,24 +55,41 @@ def jeu(fenetre,nom):
     #comment jouer
     btnCommentJouer=Button(fenetre,font=("Arial",30),width="8",text="Comment \n jouer ? ",bg="#b4b4b4",command=appel_info)
     btnCommentJouer.place(x=1050,y=50)
+
+    #plante
+    canvaJeu.plt1=PhotoImage(file="top-view_1.png")
+    canvaJeu.create_image(1100,300,image=canvaJeu.plt1)
+    btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
+    btnplt1.place(x=1050,y=350)
     
+
     def up(event):
         x,y=canvaJeu.coords("perso1")
-        if (y-10)>200:
+        if (y-10)>200 and not pan(x,y,0,-10):
             canvaJeu.move("perso1",0,-10)
+        elif pan(x,y,0,-10) :
+            Fpanneau.panneau(fenetre)
+
     def down(event):
         x,y=canvaJeu.coords("perso1")
-        if (y+10)<600:
+        if (y+10)<600 and not pan(x,y,0,10):
             canvaJeu.move("perso1",0,10)
+        elif pan(x,y,0,10):
+            Fpanneau.panneau(fenetre)
+
     def right(event):
         x,y=canvaJeu.coords("perso1")
-        if (x+10)<1200:
+        if (x+10)<1150 and not pan(x,y,10,0):
             canvaJeu.move("perso1",10,0)
+        elif pan(x,y,10,0) :
+            Fpanneau.panneau(fenetre)
+
     def left(event):
         x,y=canvaJeu.coords("perso1")
-        if (x-10)>50:
+        if (x-10)>150 and not pan(x,y,-10,0):
             canvaJeu.move("perso1",-10,0)
-    
+        elif pan(x,y,-10,0):
+            Fpanneau.panneau(fenetre)
         
     
     canvaJeu.imgPerso=PhotoImage(file="perso 1.png")
@@ -64,10 +99,6 @@ def jeu(fenetre,nom):
     fenetre.bind('<KeyPress-Right>', right)
     fenetre.bind('<KeyPress-Left>', left)
     
-    
-    
-    canvaJeu.imgPan = PhotoImage(file="panneau.png")
-    canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
     
     canvaJeu.pack()
     
@@ -80,7 +111,7 @@ def jeu(fenetre,nom):
         if (x>900 and x<1000) and (y>50 and y<150):
             pause()
         if (x>1050 and x<1250) and(y>50 and y<150):
-            info()
+            appel_info()
             
     fenetre.bind('<Button-1>', coord_souris)
 
