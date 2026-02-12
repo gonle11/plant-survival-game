@@ -22,10 +22,23 @@ def infoPlantes(fenetre):
                 canva1.img=PhotoImage(file="Epipremnum_aureum.png")
                 canva1.create_image(485,300,image=canva1.img)
                 canva1.pack()
+        
+        def plt2():
+              InfoP2= Toplevel(InfoPlantes, width=600, height=400)
+              canva2=Canvas(InfoP2,width=600,height=400,background="#b4b4b4")
+              canva2.create_text(300,30,text="Sansevieria trifasciata", font=("Times",50))
+              canva2.create_text(315,130,text="La Sansevieria trifasciata est une plante grasse tropicale. \n Elle est appelée Langue de belle_mère ou Couteau. Elle appartient\n à la famille des Liliaceae et est originaire d’Afrique.", font=("Times",15)) 
+              canva2.create_rectangle(25,250,375,350,fill="#C98E26")
+              canva2.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
+              canva2.create_text(200,325,font=("Times",10),text="Autrefois les plus longues feuilles \n servaient à fabriquer des cordes.") 
+              canva2.img=PhotoImage(file="sansevieria_trifasciata.png")
+              canva2.create_image(485,300,image=canva2.img)
+              canva2.pack()
+        
 
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
         btn1 = Button(InfoPlantes, text="Epipremnum aureum ",command=plt1)
-        btn2 = Button(InfoPlantes, text="Sansevieria trifasciata")#,command=plt2)
+        btn2 = Button(InfoPlantes, text="Sansevieria trifasciata",command=plt2)
         btn3 = Button(InfoPlantes, text="Chlorophytum comosum ")#,command=plt3)
         btn4 = Button(InfoPlantes, text="Ficus elastica")#,command=plt4)
         btn5 = Button(InfoPlantes, text="Monstera deliciosa")#,command=plt5)
