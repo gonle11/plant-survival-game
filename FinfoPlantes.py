@@ -4,7 +4,7 @@ from tkinter import font
 def infoPlantes(fenetre):
 
         def plt1():
-                InfoP1= Toplevel(InfoPlantes, width=600, height=400)
+                InfoP1= Toplevel(InfoPlantes, width=600, height=400,background="#b4b4b4")
                 def semper():
                         Semper=Toplevel(InfoP1,width=300,height=100)
                         canva=Canvas(Semper,width=300,height=100,background="grey")
@@ -24,7 +24,7 @@ def infoPlantes(fenetre):
                 canva1.pack()
         
         def plt2():
-              InfoP2= Toplevel(InfoPlantes, width=600, height=400)
+              InfoP2= Toplevel(InfoPlantes, width=600, height=400,background="#b4b4b4")
               canva2=Canvas(InfoP2,width=600,height=400,background="#b4b4b4")
               canva2.create_text(300,30,text="Sansevieria trifasciata", font=("Times",50))
               canva2.create_text(315,130,text="La Sansevieria trifasciata est une plante grasse tropicale. \n Elle est appelée Langue de belle_mère ou Couteau. Elle appartient\n à la famille des Liliaceae et est originaire d’Afrique.", font=("Times",15)) 
@@ -32,11 +32,11 @@ def infoPlantes(fenetre):
               canva2.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
               canva2.create_text(200,325,font=("Times",10),text="Autrefois les plus longues feuilles \n servaient à fabriquer des cordes.") 
               canva2.img=PhotoImage(file="sansevieria_trifasciata.png")
-              canva2.create_image(48,300,image=canva2.img)
+              canva2.create_image(485,300,image=canva2.img)
               canva2.pack()
         
         def plt3():
-              InfoP3= Toplevel(InfoPlantes, width=600, height=400)
+              InfoP3= Toplevel(InfoPlantes, width=600, height=400,background="#b4b4b4")
               canva3=Canvas(InfoP3,width=600,height=400,background="#b4b4b4")
               canva3.create_text(303,30,text="Chlorophytum comosum ", font=("Times",45))
               canva3.create_text(315,130,text="La Chlorophytum comosum ou spider plant en anglais \n est une plante originaire d’afrique orientale \n et du sud. Elle fait partie de la famille des Asparagaceae.\n Elle est souvent utilisée comme plante ornementale d’appartement.", font=("Times",15)) 
@@ -48,7 +48,7 @@ def infoPlantes(fenetre):
               canva3.pack()                
         
         def plt4():
-              InfoP4= Toplevel(InfoPlantes, width=600, height=400)
+              InfoP4= Toplevel(InfoPlantes, width=600, height=400,background="#b4b4b4")
               canva4=Canvas(InfoP4,width=600,height=400,background="#b4b4b4")
               canva4.create_text(300,30,text="Ficus elastica ", font=("Times",45))
               canva4.create_text(320,130,text="Le ficus elastica ou caoutchouc est un arbre originaire d’Asie. Comme \nson nom l’indique, il produit du latex mais en réalité le caoutchouc\n est aujourd’hui produit avec la sève de l’hévéa. Le ficus elastica est \n cultivé dans le monde entier comme plante d'ornement : dans les \npays chaud en extérieur et dans les plus froid en interieur.", font=("Times",15)) 
