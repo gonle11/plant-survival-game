@@ -59,6 +59,18 @@ def infoPlantes(fenetre):
               canva4.create_image(487,300,image=canva4.img)
               canva4.pack()                
         
+        def plt5():
+              InfoP5= Toplevel(InfoPlantes, width=600, height=400,background="#b4b4b4")
+              canva5=Canvas(InfoP5,width=600,height=400,background="#b4b4b4")
+              canva5.create_text(300,30,text="Monstera deliciosa", font=("Times",50))
+              canva5.create_text(325,130,text="La Monstera deliciosa ou faux philodendron ou encore plante gruyère \n est une plante originaire de forêts tropicales humides en plaine \n et moyenne montagne, dans l'extrême sud du Mexique et au Guatemala. \n Elle peut atteindre dans la nature jusqu’à 20m de long. Elle se nomme \n faux philodendron car elle est beaucoup commercialisée sous le nom \nde philodendron alors qu’elle ne fait pas partie de cette espèce !", font=("Times",15)) 
+              canva5.create_rectangle(25,250,375,350,fill="#C98E26")
+              canva5.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
+              canva5.create_text(200,325,font=("Times",10),text='Elle se nomme "plante gruyère" car plus la plante vieillit,\n plus les feuilles se parent de larges perforations') 
+              canva5.img=PhotoImage(file="monstera_deliciosa.png")
+              canva5.create_image(485,310,image=canva5.img)
+              canva5.pack()
+                
 
         InfoPlantes = Toplevel(fenetre,width=700, height=500,background="grey")
         titre=Label(InfoPlantes,text="Les plantes",font=("Times",50,"italic"),bg="grey")
@@ -67,7 +79,7 @@ def infoPlantes(fenetre):
         btn2 = Button(InfoPlantes, text="Sansevieria trifasciata",command=plt2,bd=0,bg="grey",font=("Times",15,"italic"))
         btn3 = Button(InfoPlantes, text="Chlorophytum comosum ",command=plt3,bd=0,bg="grey",font=("Times",15,"italic"))
         btn4 = Button(InfoPlantes, text="Ficus elastica",command=plt4,bd=0,bg="grey",font=("Times",15,"italic"))
-        btn5 = Button(InfoPlantes, text="Monstera deliciosa",bd=0,bg="grey",font=("Times",15,"italic"))#,command=plt5)
+        btn5 = Button(InfoPlantes, text="Monstera deliciosa",bd=0,bg="grey",font=("Times",15,"italic"),command=plt5)
         btn6 = Button(InfoPlantes, text="Spathiphyllum wallisii",bd=0,bg="grey",font=("Times",15,"italic"))#,command=plt6)
         btn7 = Button(InfoPlantes, text="Dracaena marginata",bd=0,bg="grey",font=("Times",15,"italic"))#,command=plt7)
         btn8 = Button(InfoPlantes, text="Calathea orbifolia",bd=0,bg="grey",font=("Times",15,"italic"))#,command=plt8)
