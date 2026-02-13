@@ -32,13 +32,13 @@ def infoPlantes(fenetre):
               canva2.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
               canva2.create_text(200,325,font=("Times",10),text="Autrefois les plus longues feuilles \n servaient à fabriquer des cordes.") 
               canva2.img=PhotoImage(file="sansevieria_trifasciata.png")
-              canva2.create_image(485,300,image=canva2.img)
+              canva2.create_image(48,300,image=canva2.img)
               canva2.pack()
         
         def plt3():
               InfoP3= Toplevel(InfoPlantes, width=600, height=400)
               canva3=Canvas(InfoP3,width=600,height=400,background="#b4b4b4")
-              canva3.create_text(300,30,text="Chlorophytum comosum ", font=("Times",45))
+              canva3.create_text(303,30,text="Chlorophytum comosum ", font=("Times",45))
               canva3.create_text(315,130,text="La Chlorophytum comosum ou spider plant en anglais \n est une plante originaire d’afrique orientale \n et du sud. Elle fait partie de la famille des Asparagaceae.\n Elle est souvent utilisée comme plante ornementale d’appartement.", font=("Times",15)) 
               canva3.create_rectangle(25,250,375,350,fill="#C98E26")
               canva3.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
@@ -47,12 +47,24 @@ def infoPlantes(fenetre):
               canva3.create_image(485,300,image=canva3.img)
               canva3.pack()                
         
+        def plt4():
+              InfoP4= Toplevel(InfoPlantes, width=600, height=400)
+              canva4=Canvas(InfoP4,width=600,height=400,background="#b4b4b4")
+              canva4.create_text(300,30,text="Ficus elastica ", font=("Times",45))
+              canva4.create_text(320,130,text="Le ficus elastica ou caoutchouc est un arbre originaire d’Asie. Comme \nson nom l’indique, il produit du latex mais en réalité le caoutchouc\n est aujourd’hui produit avec la sève de l’hévéa. Le ficus elastica est \n cultivé dans le monde entier comme plante d'ornement : dans les \npays chaud en extérieur et dans les plus froid en interieur.", font=("Times",15)) 
+              canva4.create_rectangle(25,250,375,350,fill="#C98E26")
+              canva4.create_text(150,275,text="Le saviez-vous ? ",font=("Times",25))
+              canva4.create_text(200,320,font=("Times",10),text=" Dans le Nord-Est de l’Inde, dans la région \nde Cherrapunji, les populations locales dirigent \nles racines pour former des ponts vivants") 
+              canva4.img=PhotoImage(file="ficus_elastica.png")
+              canva4.create_image(487,300,image=canva4.img)
+              canva4.pack()                
+        
 
         InfoPlantes = Toplevel(fenetre, width=800, height=500,background="grey")
         btn1 = Button(InfoPlantes, text="Epipremnum aureum ",command=plt1)
         btn2 = Button(InfoPlantes, text="Sansevieria trifasciata",command=plt2)
         btn3 = Button(InfoPlantes, text="Chlorophytum comosum ",command=plt3)
-        btn4 = Button(InfoPlantes, text="Ficus elastica")#,command=plt4)
+        btn4 = Button(InfoPlantes, text="Ficus elastica",command=plt4)
         btn5 = Button(InfoPlantes, text="Monstera deliciosa")#,command=plt5)
         btn6 = Button(InfoPlantes, text="Spathiphyllum wallisii")#,command=plt6)
         btn7 = Button(InfoPlantes, text="Dracaena marginata")#,command=plt7)
