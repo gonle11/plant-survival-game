@@ -60,9 +60,9 @@ def infoPlantes(fenetre):
               canva4.pack()                
         
 
-        InfoPlantes = Toplevel(fenetre,width=800, height=500,background="grey")
+        InfoPlantes = Toplevel(fenetre,width=700, height=500,background="grey")
         titre=Label(InfoPlantes,text="Les plantes",font=("Times",50,"italic"),bg="grey")
-        titre.place(x=250,y=15)
+        titre.place(x=220,y=7)
         btn1 = Button(InfoPlantes, text="Epipremnum aureum ",command=plt1,bd=0,bg="grey",font=("Times",15,"italic"))
         btn2 = Button(InfoPlantes, text="Sansevieria trifasciata",command=plt2,bd=0,bg="grey",font=("Times",15,"italic"))
         btn3 = Button(InfoPlantes, text="Chlorophytum comosum ",command=plt3,bd=0,bg="grey",font=("Times",15,"italic"))
