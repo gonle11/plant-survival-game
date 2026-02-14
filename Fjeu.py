@@ -3,6 +3,7 @@ from tkinter import font
 import Finfo, Fpanneau, Finfoplt
 
 def jeu(fenetre,nom,pdp):
+    global tempsEcoule
 
     def appel_info():
         Finfo.info(fenetre)
@@ -45,8 +46,21 @@ def jeu(fenetre,nom,pdp):
     canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
 
     #temps
+    def mettreAJourTimer():
+        global tempsEcoule
+        tempsEcoule += 1
+        min=tempsEcoule//60
+        sec=tempsEcoule%60
+        
+        canvaJeu.itemconfig("timer",text=f"{min:02d}:{sec:02d}")
+        fenetre.after(1000, mettreAJourTimer)
+    
     canvaJeu.create_oval(550,50,850,150,fill="#b4b4b4")
-    canvaJeu.create_text(700,100,text="00:00",font=("Arial",50))
+    canvaJeu.create_text(700,100,text="00:00",font=("Arial",50),tag="timer")
+    tempsEcoule=0
+    mettreAJourTimer()
+    
+
 
     #pause
     canvaJeu.create_oval(900,50,1000,150,fill="#b4b4b4")
