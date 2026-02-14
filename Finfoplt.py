@@ -16,7 +16,7 @@ def ajt_eau():
     print(eauActu)
     canvaPlt.itemconfigure("eau",text="(actuelement : {} cl)".format(eauActu))
 
-def canva (fenetre,humi,lumi,chal):
+def canva (fenetre,lumi,humi,chal):
     global valueHum, valueLum, valueChal,canvaPlt
     Plt=Toplevel(fenetre,width=500,height=500)
 
@@ -51,5 +51,60 @@ def canva (fenetre,humi,lumi,chal):
 
 def infoplt1(fenetre):
     global eauActu
-    eauActu=35
-    canva(fenetre,45,65,87)
+    eauActu=50
+    canva(fenetre,55,50,55)
+
+def infoplt2(fenetre):
+    global eauActu
+    eauActu=40
+    canva(fenetre,55,30,55)
+
+def infoplt3(fenetre):
+    global eauActu
+    eauActu=55
+    canva(fenetre,65,50,55)
+
+def infoplt4(fenetre):
+    global eauActu
+    eauActu=60
+    canva(fenetre,70,60,60)
+
+def infoplt5(fenetre):
+    global eauActu
+    eauActu=65
+    canva(fenetre,70,70,65)
+
+def infoplt6(fenetre):
+    global eauActu
+    eauActu=60
+    canva(fenetre,50,80,60)
+
+def infoplt7(fenetre):
+    global eauActu
+    eauActu=55
+    canva(fenetre,60,50,60)
+
+def infoplt8(fenetre):
+    global eauActu
+    eauActu=65
+    canva(fenetre,60,90,65)
+
+def infoplt9(fenetre):
+    global eauActu
+    eauActu=70
+    canva(fenetre,70,90,70)
+
+def infoplt10(fenetre):
+    global eauActu
+    eauActu=60
+    canva(fenetre,80,60,65)
+
+def infoplt11(fenetre):
+    global eauActu
+    eauActu=25
+    canva(fenetre,95,15,80)
+
+def infoplt12(fenetre):
+    global eauActu
+    eauActu=75
+    canva(fenetre,80,95,75)
