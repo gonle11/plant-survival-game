@@ -97,13 +97,23 @@ def jeu(fenetre,nom,pdp):
     canvaJeu.create_image(1100,250,image=canvaJeu.plt1)
     btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
     btnplt1.place(x=1050,y=300)
+    def proxi_plt1(x,y,Dx,Dy):
+        x+=Dx
+        y+=Dy
+        if (x>1050 and x<1150) and (y>200 and y<300):
+            return True
     
     #plante2
     canvaJeu.plt2=PhotoImage(file="top-view_1.png")##
     canvaJeu.create_image(1100,400,image=canvaJeu.plt2)
     btnplt2=Button(fenetre,font=("Arial",10),width="15",text="plante2 \n Niveau 1",bg="peru",command=appel_infoplt2)
     btnplt2.place(x=1050,y=450)
-
+    def proxi_plt2(x,y,Dx,Dy):
+        x+=Dx
+        y+=Dy
+        if (x>1050 and x<1150) and (y>350 and y<450):
+            return True
+    
     #plante3
     canvaJeu.plt3=PhotoImage(file="top-view_1.png")##
     canvaJeu.create_image(1100,550,image=canvaJeu.plt3)
@@ -164,30 +174,34 @@ def jeu(fenetre,nom,pdp):
     btnplt12=Button(fenetre,font=("Arial",10),width="15",text="plante12\n Niveau 1",bg="peru",command=appel_infoplt12)
     btnplt12.place(x=350,y=500)
 
+    def obstacle(x,y,Dx,Dy):
+        if pan(x,y,Dx,Dy) or proxi_plt1(x,y,Dx,Dy) or proxi_plt2(x,y,Dx,Dy):
+            return True
+
     def up(event):
         x,y=canvaJeu.coords("perso1")
-        if (y-10)>200 and not pan(x,y,0,-10):
+        if (y-10)>200 and not obstacle(x,y,0,-10):
             canvaJeu.move("perso1",0,-10)
         elif pan(x,y,0,-10) :
             Fpanneau.panneau(fenetre)
 
     def down(event):
         x,y=canvaJeu.coords("perso1")
-        if (y+10)<600 and not pan(x,y,0,10):
+        if (y+10)<600 and not obstacle(x,y,0,10):
             canvaJeu.move("perso1",0,10)
         elif pan(x,y,0,10):
             Fpanneau.panneau(fenetre)
 
     def right(event):
         x,y=canvaJeu.coords("perso1")
-        if (x+10)<1150 and not pan(x,y,10,0):
+        if (x+10)<1150 and not obstacle(x,y,10,0):
             canvaJeu.move("perso1",10,0)
         elif pan(x,y,10,0) :
             Fpanneau.panneau(fenetre)
 
     def left(event):
         x,y=canvaJeu.coords("perso1")
-        if (x-10)>150 and not pan(x,y,-10,0):
+        if (x-10)>150 and not obstacle(x,y,-10,0):
             canvaJeu.move("perso1",-10,0)
         elif pan(x,y,-10,0):
             Fpanneau.panneau(fenetre)
