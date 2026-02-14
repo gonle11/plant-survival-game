@@ -14,6 +14,24 @@ def jeu(fenetre,nom,pdp):
         Finfoplt.infoplt2(fenetre)
     def appel_infoplt3():
         Finfoplt.infoplt3(fenetre)
+    def appel_infoplt4():
+        Finfoplt.infoplt4(fenetre)
+    def appel_infoplt5():
+        Finfoplt.infoplt5(fenetre)
+    def appel_infoplt6():
+        Finfoplt.infoplt6(fenetre)
+    def appel_infoplt7():
+        Finfoplt.infoplt7(fenetre)
+    def appel_infoplt8():
+        Finfoplt.infoplt8(fenetre)
+    def appel_infoplt9():
+        Finfoplt.infoplt9(fenetre)
+    def appel_infoplt10():
+        Finfoplt.infoplt10(fenetre)
+    def appel_infoplt11():
+        Finfoplt.infoplt11(fenetre)
+    def appel_infoplt12():
+        Finfoplt.infoplt12(fenetre)
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -91,6 +109,58 @@ def jeu(fenetre,nom,pdp):
     canvaJeu.create_image(150,300,image=canvaJeu.plt3)
     btnplt3=Button(fenetre,font=("Arial",10),width="15",text="plante3 \n Niveau 1",bg="peru",command=appel_infoplt3)
     btnplt3.place(x=150,y=350)
+
+    #plante4
+    canvaJeu.plt4=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,300,image=canvaJeu.plt4)##
+    btnplt4=Button(fenetre,font=("Arial",10),width="15",text="plante4 \n Niveau 1",bg="peru",command=appel_infoplt4)
+    btnplt4.place(x=1050,y=350)##
+    
+    #plante5
+    canvaJeu.plt5=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,500,image=canvaJeu.plt5)##
+    btnplt5=Button(fenetre,font=("Arial",10),width="15",text="plante5 \n Niveau 1",bg="peru",command=appel_infoplt5)
+    btnplt5.place(x=1050,y=500)##
+
+    #plante6
+    canvaJeu.plt6=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(150,300,image=canvaJeu.plt6)##
+    btnplt6=Button(fenetre,font=("Arial",10),width="15",text="plante3 \n Niveau 1",bg="peru",command=appel_infoplt6)
+    btnplt6.place(x=150,y=350)##
+    #plante7
+    canvaJeu.plt7=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,300,image=canvaJeu.plt7)##
+    btnplt7=Button(fenetre,font=("Arial",10),width="15",text="plante7 \n Niveau 1",bg="peru",command=appel_infoplt7)
+    btnplt7.place(x=1050,y=350)##
+    
+    #plante8
+    canvaJeu.plt8=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,500,image=canvaJeu.plt8)##
+    btnplt8=Button(fenetre,font=("Arial",10),width="15",text="plante8 \n Niveau 1",bg="peru",command=appel_infoplt8)
+    btnplt8.place(x=1050,y=500)##
+
+    #plante9
+    canvaJeu.plt9=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(150,300,image=canvaJeu.plt9)##
+    btnplt9=Button(fenetre,font=("Arial",10),width="15",text="plante9 \n Niveau 1",bg="peru",command=appel_infoplt9)
+    btnplt9.place(x=150,y=350)##
+    #plante10
+    canvaJeu.plt10=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,300,image=canvaJeu.plt10)##
+    btnplt10=Button(fenetre,font=("Arial",10),width="15",text="plante10\n Niveau 1",bg="peru",command=appel_infoplt10)
+    btnplt10.place(x=1050,y=350)##
+    
+    #plante11
+    canvaJeu.plt11=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,500,image=canvaJeu.plt11)##
+    btnplt11=Button(fenetre,font=("Arial",10),width="15",text="plante11 \n Niveau 1",bg="peru",command=appel_infoplt11)
+    btnplt11.place(x=1050,y=500)##
+
+    #plante12
+    canvaJeu.plt12=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(150,300,image=canvaJeu.plt12)##
+    btnplt12=Button(fenetre,font=("Arial",10),width="15",text="plante12 \n Niveau 1",bg="peru",command=appel_infoplt12)
+    btnplt12.place(x=150,y=350)##
 
     def up(event):
         x,y=canvaJeu.coords("perso1")
