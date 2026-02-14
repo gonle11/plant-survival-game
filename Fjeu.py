@@ -10,6 +10,10 @@ def jeu(fenetre,nom,pdp):
     
     def appel_infoplt1():
         Finfoplt.infoplt1(fenetre)
+    def appel_infoplt2():
+        Finfoplt.infoplt2(fenetre)
+    def appel_infoplt3():
+        Finfoplt.infoplt3(fenetre)
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -70,12 +74,23 @@ def jeu(fenetre,nom,pdp):
     btnCommentJouer=Button(fenetre,font=("Arial",30),width="8",text="Comment \n jouer ? ",bg="#b4b4b4",command=appel_info)
     btnCommentJouer.place(x=1050,y=50)
 
-    #plante
+    #plante1
     canvaJeu.plt1=PhotoImage(file="top-view_1.png")
     canvaJeu.create_image(1100,300,image=canvaJeu.plt1)
     btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
     btnplt1.place(x=1050,y=350)
     
+    #plante2
+    canvaJeu.plt2=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(1100,500,image=canvaJeu.plt2)
+    btnplt2=Button(fenetre,font=("Arial",10),width="15",text="plante2 \n Niveau 1",bg="peru",command=appel_infoplt2)
+    btnplt2.place(x=1050,y=500)
+
+    #plante3
+    canvaJeu.plt3=PhotoImage(file="top-view_1.png")##
+    canvaJeu.create_image(150,300,image=canvaJeu.plt3)
+    btnplt3=Button(fenetre,font=("Arial",10),width="15",text="plante3 \n Niveau 1",bg="peru",command=appel_infoplt3)
+    btnplt3.place(x=150,y=350)
 
     def up(event):
         x,y=canvaJeu.coords("perso1")
