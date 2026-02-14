@@ -5,7 +5,7 @@ class Plant:
         water=50,
         light=50,
         humidity=50,
-        # warmth
+        warmth = 50
         optimal_water=(40, 70),
         optimal_light=(40, 70),
         optimal_humidity=(40, 70),
@@ -17,7 +17,7 @@ class Plant:
         self.water = water
         self.light = light
         self.humidity = humidity
-
+        semf.warmth = warmth
         self.optimal_water = optimal_water
         self.optimal_light = optimal_light
         self.optimal_humidity = optimal_humidity
