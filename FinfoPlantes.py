@@ -126,3 +126,23 @@ def plt5(fen):
       canva5.create_image(485,310,image=canva5.img)
       canva5.pack()
 
+def plt6(fen):
+      print("6")
+
+def plt7(fen):
+      print("7")
+
+def plt8(fen):
+      print("8")
+
+def plt9(fen):
+      print("9")
+
+def plt10(fen):
+      print("10")
+
+def plt11(fen):
+      print("11")
+
+def plt12(fen):
+      print("12")
