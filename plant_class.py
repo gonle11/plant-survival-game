@@ -31,7 +31,7 @@ class Plant:
 
     # easy plants
     @staticmethod
-    def create_Epipremnum_aureum():
+    def create_Epipremnum_aureum():#plt1
         return Plant(
             name="Epipremnum aureum",
             water=50,
@@ -46,7 +46,7 @@ class Plant:
         )
     
     @staticmethod
-    def create_Sansevieria_trifasciata():
+    def create_Sansevieria_trifasciata():#plt2
         return Plant(
             name="Sansevieria trifasciata",
             water=40,
@@ -61,7 +61,7 @@ class Plant:
         )
     
     @staticmethod
-    def create_Chlorophytum_comosum():
+    def create_Chlorophytum_comosum():#plt3
         return Plant(
             name="Chlorophytum comosum",
             water=55,
@@ -77,7 +77,7 @@ class Plant:
 
     # Medium plants
     @staticmethod
-    def create_Ficus_elastica():
+    def create_Ficus_elastica():#plt4
         return Plant(
             name="Ficus elastica",
             water=60,
@@ -92,7 +92,7 @@ class Plant:
         )
     
     @staticmethod
-    def create_Monstera_deliciosa():
+    def create_Monstera_deliciosa():#plt5
         return Plant(
             name="Monstera deliciosa",
             water=65,
@@ -107,7 +107,7 @@ class Plant:
         )
     
     @staticmethod
-    def create_Spathiphyllum_wallisii():
+    def create_Spathiphyllum_wallisii():#plt6
         return Plant(
             name="Spathiphyllum wallisii",
             water=60,
@@ -122,7 +122,7 @@ class Plant:
         )
     
     @staticmethod
-    def create_dracaena_marginata():
+    def create_dracaena_marginata():#plt7
         return Plant(
             name="Dracaena marginata",
             water=55,
@@ -138,7 +138,7 @@ class Plant:
         
 # hard plant
     @staticmethod
-    def create_Calathea_orbifolia():
+    def create_Calathea_orbifolia(): #plt8
         return Plant(
             name="Calathea orbifolia",
             water=65,
@@ -153,7 +153,7 @@ class Plant:
         )
         
     @staticmethod
-    def create_Alocasia_amazonica():
+    def create_Alocasia_amazonica():#plt9
         return Plant(
             name="Alocasia amazonica",
             water=70,
@@ -168,7 +168,7 @@ class Plant:
         )
 
     @staticmethod
-    def create_Ficus_lyrata():
+    def create_Ficus_lyrata():#plt10
         return Plant(
             name="Ficus lyrata",
             water=60,
@@ -183,7 +183,7 @@ class Plant:
         )
 #specilal
     @staticmethod
-    def create_Cactus_ferocactus():
+    def create_Cactus_ferocactus():#plt11
         return Plant(
             name="Cactus ferocactus",
             water=25,
@@ -198,7 +198,7 @@ class Plant:
         )
 
     @staticmethod
-    def create_Nepenthes_alata():
+    def create_Nepenthes_alata():#plt12
         return Plant(
             name="Nepenthes alata",
             water=75,
