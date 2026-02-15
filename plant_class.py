@@ -1,3 +1,5 @@
+# plant.class.py
+
 class Plant:
     def __init__(
         self,
@@ -17,6 +19,7 @@ class Plant:
         self.water = water
         self.light = light
         self.humidity = humidity
+        self.warmth = warmth
 
         self.optimal_water = optimal_water
         self.optimal_light = optimal_light
@@ -29,7 +32,6 @@ class Plant:
 
         self.growth_stage = 1
         self.age = 0
-    #comemjjjjjjj
     # easy plants
     @staticmethod
     def create_Epipremnum_aureum():
@@ -229,9 +231,20 @@ class Plant:
         return (
             self.optimal_humidity[0] <= self.humidity <= self.optimal_humidity[1]
         )
+    
+    def is_in_optimal_warmth_range(self):
+        retrun (
+            self.optimal_warmth[0] <= self.warmth <= self.optimal_warmth[1]
+       )
 
         
     def get_water_decay(self):
+        return 1 + self.growth_stage * 0.5
+    
+    def get_warmth_decay(self):
+        return 1 + self.growth_stage * 0.5
+    
+    def get_humidity_decay(self):
         return 1 + self.growth_stage * 0.5
 
 
@@ -251,7 +264,8 @@ class Plant:
         # Natural decay (needs increase with growth)
         self.water -= self.get_water_decay()
         self.light -= 0.5
-        self.humidity -= 0.3
+        self.humidity -= self.get_humidity_decay()
+        self.warmth -= self.get_warmth_decay()
 
         # checks the otpimal conditions
         checks_optimal = [
