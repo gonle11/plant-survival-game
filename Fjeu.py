@@ -34,7 +34,7 @@ def jeu(fenetre,nom,pdp,canvaJeu):
         Finfoplt.infoplt12(fenetre)
     
     with open("best_score.txt","r") as f:
-       bPlayer,bMin, bSec = f.read().split(" ")
+       bPlayer, bSec = f.read().split(" ")
     """
     #creation du canva + bg
     canvaJeu = Canvas(fenetre, width=1300, height=645)
@@ -65,7 +65,7 @@ def jeu(fenetre,nom,pdp,canvaJeu):
     #meilleur (score)
     canvaJeu.create_rectangle(250,50,500,150,fill="#b4b4b4")
     canvaJeu.create_text(350,75,text="Meilleur score :",font=("Arial",15))
-    canvaJeu.create_text(350,120,text=bPlayer +" : " + bMin+" min "+bSec,font=("Arial",15))
+    canvaJeu.create_text(350,120,text=bPlayer +" : " +bSec+" sec",font=("Arial",15))
 
     #temps
     def mettreAJourTimer():

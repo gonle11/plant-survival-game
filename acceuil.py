@@ -21,7 +21,7 @@ def accueil(fenetre,canvaJeu):
     nom=""
     global actu
     with open("best_score.txt","r") as f:
-       bPlayer,bMin, bSec = f.read().split(" ")
+       bPlayer,bSec = f.read().split(" ")
 
     def coord_souris(event):
         global actu
@@ -64,7 +64,7 @@ def accueil(fenetre,canvaJeu):
     canvaAcc.create_rectangle(100,200,400,400,fill="peru")
     canvaAcc.create_text(250,250,text="Meilleur temps :",font=("times",30))
     canvaAcc.create_text(250,315,text=bPlayer,font=("times",40))
-    canvaAcc.create_text(250,375,text=bMin + " min "+ bSec,font=("times",40))
+    canvaAcc.create_text(250,375,text=bSec+" sec",font=("times",40))
     
     #info plantes
     btnInfoPlantes=Button(fenetre,font=("Arial",30),width="15",text="Infos \n sur \n les plantes",bg="peru",command=appel_infoPlantes)
