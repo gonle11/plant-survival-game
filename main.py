@@ -9,7 +9,7 @@ from score import save_score, get_best_score
 import csv
 from tkinter import *
 
-import Fjeu
+import simul
 import acceuil
 
      
@@ -22,51 +22,47 @@ simulation = Simulation(
 )
 fenetre=Tk()
 
-#creation du canva + bg
-canvaJeu = Canvas(fenetre, width=1300, height=645)
-canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
-canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
-canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
-canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
-debutJeu=False
-acceuil.accueil(fenetre,canvaJeu,debutJeu)
-print("premiere plante",first_plant.name)
-canvaJeu.itemconfigure("Epipremnum aureum",state='normal')###
-canvaJeu.pack()####
-fenetre.update()###
-print("show")
+simul.init_lancerFen(fenetre,first_plant)
 
-while simulation.running and debutJeu:
-    simulation.update()
-    print(f"Time: {simulation.time}")
-    for i, plant in enumerate(simulation.plants):   # affiche les infos de chaque plantes à relier avec interface
-        print(
-            f"Plant {i+1} | "
-            f"Health: {plant.health} | "
-            f"Stress: {plant.stress} | "
-            f"Stage: {plant.growth_stage}"
-        )
-        
-    time.sleep(1)  # 1 second per tick
+def qDeb():
+    if not acceuil.debut():
+        print(acceuil.debut())
+        fenetre.after(5, qDeb)
+    else:
+        sim()
+qDeb()
+def sim():
+    while simulation.running:
+        simulation.update()
+        print(f"Time: {simulation.time}")
+        for i, plant in enumerate(simulation.plants):   # affiche les infos de chaque plantes à relier avec interface
+            print(
+                f"Plant {i+1} | "
+                f"Health: {plant.health} | "
+                f"Stress: {plant.stress} | "
+                f"Stage: {plant.growth_stage}"
+            )
+            
+        time.sleep(1)  # 1 second per tick
 
-# gestion chronos
-player_name = "Alice"  # later passed from UI
-save_score(player_name, simulation.time)
-print("💀 GAME OVER — Une plante est morte")
+    # gestion chronos
+    player_name = "Alice"  # later passed from UI
+    save_score(player_name, simulation.time)
+    print("💀 GAME OVER — Une plante est morte")
 
-#dispay best time
-best_player, best_time = get_best_score()
-print(best_player,best_time)
-with open("best_score.txt","w") as f:
-    f.write(f"{best_player} {best_time}")
+    #dispay best time
+    best_player, best_time = get_best_score()
+    print(best_player,best_time)
+    with open("best_score.txt","w") as f:
+        f.write(f"{best_player} {best_time}")
 
-best_time = (
-     "Jouer pour afficher vos scores!" 
-     if best_player is None 
-     else f"{best_player}, {best_time}" 
-)
+    best_time = (
+        "Jouer pour afficher vos scores!" 
+        if best_player is None 
+        else f"{best_player}, {best_time}" 
+    )
 
-fenetre.mainloop()
+    fenetre.mainloop()
 
 
 
