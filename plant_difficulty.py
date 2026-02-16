@@ -1,6 +1,6 @@
 #plant_difficulty.py
 
-from plant import Plant
+from plant_class import Plant
 
 plant_pool = {
     "easy": [

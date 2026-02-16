@@ -7,7 +7,7 @@ class Plant:
         water=50,
         light=50,
         humidity=50,
-        warmth = 50
+        warmth = 50,
         optimal_water=(40, 70),
         optimal_light=(40, 70),
         optimal_humidity=(40, 70),
@@ -232,7 +232,7 @@ class Plant:
         )
     
     def is_in_optimal_warmth_range(self):
-        retrun (
+        return (
             self.optimal_warmth[0] <= self.warmth <= self.optimal_warmth[1]
        )
 
