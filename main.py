@@ -28,18 +28,15 @@ canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
 canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
 canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
 canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
-
-acceuil.accueil(fenetre,canvaJeu)
+debutJeu=False
+acceuil.accueil(fenetre,canvaJeu,debutJeu)
 print("premiere plante",first_plant.name)
 canvaJeu.itemconfigure("Epipremnum aureum",state='normal')###
 canvaJeu.pack()####
 fenetre.update()###
 print("show")
-fenetre.mainloop()
 
-
-
-while simulation.running:
+while simulation.running and debutJeu:
     simulation.update()
     print(f"Time: {simulation.time}")
     for i, plant in enumerate(simulation.plants):   # affiche les infos de chaque plantes à relier avec interface
@@ -49,7 +46,7 @@ while simulation.running:
             f"Stress: {plant.stress} | "
             f"Stage: {plant.growth_stage}"
         )
-         
+        
     time.sleep(1)  # 1 second per tick
 
 # gestion chronos
@@ -59,6 +56,9 @@ print("💀 GAME OVER — Une plante est morte")
 
 #dispay best time
 best_player, best_time = get_best_score()
+print(best_player,best_time)
+with open("best_score.txt","w") as f:
+    f.write(f"{best_player} {best_time}")
 
 best_time = (
      "Jouer pour afficher vos scores!" 
@@ -66,7 +66,7 @@ best_time = (
      else f"{best_player}, {best_time}" 
 )
 
-
+fenetre.mainloop()
 
 
 

@@ -3,10 +3,11 @@ import Fjeu, Finfo,FinfoPlantes
 
 
 
-def accueil(fenetre,canvaJeu):
+def accueil(fenetre,canvaJeu,debutJeu):
 
-    def appel_jeu():
+    def appel_jeu(debutJeu):
         Fjeu.jeu(fenetre,nom,actu,canvaJeu)
+        debutJeu=True
         btnInfoPlantes.place_forget()
         btnCommentJouer.place_forget()
         entreeNom.place_forget()
@@ -29,7 +30,7 @@ def accueil(fenetre,canvaJeu):
         y = event.y
         if (x>800 and x<1200) and (y>350 and y<700):#"btn" jouer
             canvaAcc.destroy()
-            appel_jeu()
+            appel_jeu(debutJeu)
         if (x>500 and x<550) and (y>250 and y<350): #skin de gauche
             if actu==0:
                 actu=len(skin)-1
