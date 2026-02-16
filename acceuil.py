@@ -1,11 +1,10 @@
 from tkinter import *
-import Fjeu, Finfo,FinfoPlantes,simul
+import Fjeu, Finfo,FinfoPlantes,main
 
 deb=False
 def debut():
     if deb:
-        print("debut")
-        return True
+        main.sim()
 
 
 def accueil(fenetre,canvaJeu):

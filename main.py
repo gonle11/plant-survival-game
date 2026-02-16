@@ -24,13 +24,7 @@ fenetre=Tk()
 
 simul.init_lancerFen(fenetre,first_plant)
 
-def qDeb():
-    if not acceuil.debut():
-        print(acceuil.debut())
-        fenetre.after(5, qDeb)
-    else:
-        sim()
-qDeb()
+
 def sim():
     while simulation.running:
         simulation.update()
