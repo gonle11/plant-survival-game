@@ -7,6 +7,10 @@ import time
 import random
 from score import save_score, get_best_score
 import csv
+from tkinter import *
+
+import Fjeu
+import acceuil
 
      
 first_plant = random.choice(plant_pool["easy"])
@@ -16,8 +20,21 @@ simulation = Simulation(
     plants=[first_plant],
     plant_pool=plant_pool
 )
-print(first_plant)
+fenetre=Tk()
 
+#creation du canva + bg
+canvaJeu = Canvas(fenetre, width=1300, height=645)
+canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
+canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
+canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
+canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
+
+acceuil.accueil(fenetre,canvaJeu)
+print("premiere plante",first_plant.name)
+canvaJeu.itemconfigure("Epipremnum aureum",state='normal')
+fenetre.update()
+print("show")
+fenetre.mainloop()
 
 
 

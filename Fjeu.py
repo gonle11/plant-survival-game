@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import font
 import Finfo, Fpanneau, Finfoplt
 
-def jeu(fenetre,nom,pdp):
+def jeu(fenetre,nom,pdp,canvaJeu):
     global tempsEcoule
 
     def appel_info():
@@ -35,14 +35,14 @@ def jeu(fenetre,nom,pdp):
     
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
-    
+    """
     #creation du canva + bg
     canvaJeu = Canvas(fenetre, width=1300, height=645)
     canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
     canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
     canvaJeu.parquetBG = PhotoImage(file="background_fond1.png")
     canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
-    
+    """
     #panneau
     canvaJeu.imgPan = PhotoImage(file="panneau.png")
     canvaJeu.create_image(650,225,image=canvaJeu.imgPan)
@@ -94,7 +94,7 @@ def jeu(fenetre,nom,pdp):
 
     #plante1
     canvaJeu.plt1=PhotoImage(file="top-view_1.png")
-    canvaJeu.create_image(1100,250,image=canvaJeu.plt1,state='hidden')
+    canvaJeu.create_image(1100,250,image=canvaJeu.plt1,state='hidden',tag="Epipremnum aureum")
     btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
     btnplt1.place(x=1050,y=300)
     def proxi_plt1(x,y,Dx,Dy):
