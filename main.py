@@ -31,8 +31,9 @@ canvaJeu.create_image(650,322,image=canvaJeu.parquetBG)
 
 acceuil.accueil(fenetre,canvaJeu)
 print("premiere plante",first_plant.name)
-canvaJeu.itemconfigure("Epipremnum aureum",state='normal')
-fenetre.update()
+canvaJeu.itemconfigure("Epipremnum aureum",state='normal')###
+canvaJeu.pack()####
+fenetre.update()###
 print("show")
 fenetre.mainloop()
 
