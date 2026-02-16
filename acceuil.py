@@ -1,9 +1,20 @@
 from tkinter import *
 import Fjeu, Finfo,FinfoPlantes
 
-fenetre = Tk()
-nom=""
-def accueil():
+
+
+def accueil(fenetre):
+
+    def appel_jeu():
+        Fjeu.jeu(fenetre,nom,actu)
+
+    def appel_info():
+        Finfo.info(fenetre)
+        
+    def appel_infoPlantes():
+        FinfoPlantes.infoPlantes(fenetre) 
+        
+    nom=""
     global actu
     with open("best_score.txt","r") as f:
        bPlayer,bMin, bSec = f.read().split(" ")
@@ -80,18 +91,11 @@ def accueil():
     canvaAcc.pack()
           
     fenetre.bind('<Button-1>', coord_souris)
+
     
     
 
-def appel_jeu():
-    Fjeu.jeu(fenetre,nom,actu)
 
-def appel_info():
-    Finfo.info(fenetre)
-    
-def appel_infoPlantes():
-    FinfoPlantes.infoPlantes(fenetre) 
 
     
-accueil()
-fenetre.mainloop()
+#accueil()
