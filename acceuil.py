@@ -3,10 +3,14 @@ import Fjeu, Finfo,FinfoPlantes
 
 
 
-def accueil(fenetre):
+def accueil(fenetre,canvaJeu):
 
     def appel_jeu():
-        Fjeu.jeu(fenetre,nom,actu)
+        Fjeu.jeu(fenetre,nom,actu,canvaJeu)
+        btnInfoPlantes.place_forget()
+        btnCommentJouer.place_forget()
+        entreeNom.place_forget()
+        btnValiderNom.place_forget()
 
     def appel_info():
         Finfo.info(fenetre)
