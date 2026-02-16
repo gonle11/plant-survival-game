@@ -14,6 +14,7 @@ simulation = Simulation(
     plants=[first_plant],
     plant_pool=plant_pool
 )
+print(first_plant)
 
 
 
