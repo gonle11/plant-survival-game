@@ -1,3 +1,5 @@
+#simulation.py
+
 import random
 import csv
 
@@ -7,6 +9,7 @@ class Simulation:
         self.plant_pool = plant_pool
         self.time = 0
         self.running = True
+        self.level = 1
         #self.spawn_start = 5     # earliest time
         #self.spawn_end = 60      # latest time
         
@@ -19,7 +22,7 @@ class Simulation:
         self.time += 1
 
         # define if level up
-        if self.age % 40 == 0 and self.level < 3:
+        if self.time % 40 == 0 and self.level < 3:
             self.level += 1
 
     

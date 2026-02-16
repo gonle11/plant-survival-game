@@ -1,8 +1,10 @@
 
-from plant import Plant
+#main.py
+from plant_class import Plant
+from plant_difficulty import plant_pool
 from simulation import Simulation
 import time
-import ramdom
+import random
 from score import save_score, get_best_score
 import csv
 
