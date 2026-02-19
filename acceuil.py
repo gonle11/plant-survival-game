@@ -1,21 +1,15 @@
 from tkinter import *
-import Fjeu, Finfo,FinfoPlantes,main
-
-deb=False
-def debut():
-    if deb:
-        main.sim()
+import Fjeu, Finfo,FinfoPlantes,simul
 
 
 def accueil(fenetre,canvaJeu):
-    global deb
     def appel_jeu():
-        global deb
         Fjeu.jeu(fenetre,nom,actu,canvaJeu)
         btnInfoPlantes.place_forget()
         btnCommentJouer.place_forget()
         entreeNom.place_forget()
         btnValiderNom.place_forget()
+        simul.sim(fenetre)
 
     def appel_info():
         Finfo.info(fenetre)
