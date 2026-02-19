@@ -21,7 +21,7 @@ def sim (fenetre):
 
     def sii():
         si(simulation)
-        
+
     def si(simulation):
         if simulation.running:
             simulation.update()
@@ -33,24 +33,25 @@ def sim (fenetre):
                     f"Stress: {plant.stress} | "
                     f"Stage: {plant.growth_stage}"
                 )
+                fenetre.after(1000, sii)
+        else:
+            # gestion chronos
+            player_name = "Alice"  # later passed from UI
+            save_score(player_name, simulation.time)
+            print("💀 GAME OVER — Une plante est morte")
+
+            #dispay best time
+            best_player, best_time = get_best_score()
+            print(best_player,best_time)
+            with open("best_score.txt","w") as f:
+                f.write(f"{best_player} {best_time}")
+
+            best_time = (
+                "Jouer pour afficher vos scores!" 
+                if best_player is None 
+                else f"{best_player}, {best_time}" 
+            )
                 
-            #time.sleep(1)  # 1 second per tick
-            fenetre.after(1000, sii)
     si(simulation)
 
-    # gestion chronos
-    player_name = "Alice"  # later passed from UI
-    save_score(player_name, simulation.time)
-    print("💀 GAME OVER — Une plante est morte")
-
-    #dispay best time
-    best_player, best_time = get_best_score()
-    print(best_player,best_time)
-    with open("best_score.txt","w") as f:
-        f.write(f"{best_player} {best_time}")
-
-    best_time = (
-        "Jouer pour afficher vos scores!" 
-        if best_player is None 
-        else f"{best_player}, {best_time}" 
-    )
+    
