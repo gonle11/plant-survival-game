@@ -7,7 +7,7 @@ from score import save_score, get_best_score
 import csv
 from tkinter import *
 
-def sim (fenetre):
+def sim (fenetre,canvaJeu):
     print("debutJeu")
 
     first_plant = random.choice(plant_pool["easy"])
@@ -15,9 +15,9 @@ def sim (fenetre):
 
     simulation = Simulation(
         plants=[first_plant],
-        plant_pool=plant_pool
-
+        plant_pool=plant_pool,
     )
+    print(first_plant.name)
 
     def sii():
         si(simulation)
@@ -31,8 +31,12 @@ def sim (fenetre):
                     f"Plant {i+1} | "
                     f"Health: {plant.health} | "
                     f"Stress: {plant.stress} | "
-                    f"Stage: {plant.growth_stage}"
+                    f"Stage: {plant.growth_stage}",
+                    plant.name,
                 )
+                canvaJeu.itemconfig(str(plant.name),state='hidden')##
+                canvaJeu.pack()
+                fenetre.update()
                 fenetre.after(1000, sii)
         else:
             # gestion chronos

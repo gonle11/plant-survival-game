@@ -9,7 +9,7 @@ def accueil(fenetre,canvaJeu):
         btnCommentJouer.place_forget()
         entreeNom.place_forget()
         btnValiderNom.place_forget()
-        simul.sim(fenetre)
+        simul.sim(fenetre,canvaJeu)
 
     def appel_info():
         Finfo.info(fenetre)
