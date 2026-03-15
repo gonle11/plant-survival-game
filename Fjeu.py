@@ -94,7 +94,7 @@ def jeu(fenetre,nom,pdp,canvaJeu):
 
     #plante1
     canvaJeu.plt1=PhotoImage(file="top-view_1.png")
-    canvaJeu.create_image(1100,250,image=canvaJeu.plt1,state='hidden',tag="Epipremnum aureum")
+    canvaJeu.create_image(1100,250,image=canvaJeu.plt1,tag="Epipremnum aureum")#,state='normal')
     btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
     btnplt1.place(x=1050,y=300)
     def proxi_plt1(x,y,Dx,Dy):
@@ -105,7 +105,7 @@ def jeu(fenetre,nom,pdp,canvaJeu):
     
     #plante2
     canvaJeu.plt2=PhotoImage(file="top-view_1.png")##
-    canvaJeu.create_image(1100,400,image=canvaJeu.plt2,state='hidden')
+    canvaJeu.create_image(1100,400,image=canvaJeu.plt2,tag="Sansevieria trifasciata",state='normal')
     btnplt2=Button(fenetre,font=("Arial",10),width="15",text="plante2 \n Niveau 1",bg="peru",command=appel_infoplt2)
     btnplt2.place(x=1050,y=450)
     def proxi_plt2(x,y,Dx,Dy):
@@ -116,7 +116,7 @@ def jeu(fenetre,nom,pdp,canvaJeu):
     
     #plante3
     canvaJeu.plt3=PhotoImage(file="top-view_1.png")##
-    canvaJeu.create_image(1100,550,image=canvaJeu.plt3,state='hidden')
+    canvaJeu.create_image(1100,550,image=canvaJeu.plt3,tag="Chlorophytum comosum",state='normal')
     btnplt3=Button(fenetre,font=("Arial",10),width="15",text="plante3 \n Niveau 1",bg="peru",command=appel_infoplt3)
     btnplt3.place(x=1050,y=600)
 
