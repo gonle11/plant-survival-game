@@ -1,13 +1,14 @@
 
 #main.py
-from plant_class import Plant
-from plant_difficulty import plant_pool
-from simulation import Simulation
-import time
-import random
-from score import save_score, get_best_score
-import csv
+#from plant_class import Plant
+#from plant_difficulty import plant_pool
+#from simulation import Simulation
+#import time
+#import random
+#from score import save_score, get_best_score
+#import csv
 from tkinter import *
+import os
 
 import acceuil
 
@@ -17,6 +18,8 @@ import acceuil
 fenetre=Tk()
 
 #creation du canva + bg
+print(os.getcwd())
+os.chdir("plant-survival-game")
 canvaJeu = Canvas(fenetre, width=1300, height=645)
 canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
 canvaJeu.create_image(650,322,image=canvaJeu.fondBG)
