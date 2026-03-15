@@ -43,6 +43,10 @@ def sim (fenetre,canvaJeu):
             player_name = "Alice"  # later passed from UI
             save_score(player_name, simulation.time)
             print("💀 GAME OVER — Une plante est morte")
+            canvaFin = Canvas(fenetre, width=1300, height=645)
+            canvaFin.create_text(200,200,text="VOUS AVEZ PERDU")
+            canvaFin.pack()
+            fenetre.update()
 
             #dispay best time
             best_player, best_time = get_best_score()
