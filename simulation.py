@@ -48,8 +48,7 @@ class Simulation:
             if possible:
                 new_plant = random.choice(possible)
                 self.plant_pool[new_plant.difficulty].remove(new_plant)
-                self.plants.append(new_plant)
-                ###
+                ### AFFICHE LA PLANTE DANS LE JEU ###
     
         # Update plants
         for plant in self.plants:
