@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import font
-import Finfo, Fpanneau, Finfoplt
+import Finfo, Fpanneau, Finfoplt,acceuil
 
 def jeu(fenetre,nom,pdp,canvaJeu):
     global tempsEcoule
@@ -86,13 +86,14 @@ def jeu(fenetre,nom,pdp,canvaJeu):
 
     #pause
     canvaJeu.create_oval(900,50,1000,150,fill="#b4b4b4")
-    canvaJeu.create_text(950,100,text="| |",font=("Arial",50))
+    canvaJeu.create_text(950,100,text="<=",font=("Arial",50))
 
     #comment jouer
     btnCommentJouer=Button(fenetre,font=("Arial",30),width="8",text="Comment \n jouer ? ",bg="#b4b4b4",command=appel_info)
     btnCommentJouer.place(x=1050,y=50)
 
     #plante1
+    """
     canvaJeu.plt1=PhotoImage(file="top-view_1.png")
     canvaJeu.create_image(1100,250,image=canvaJeu.plt1,tag="Epipremnum aureum")#,state='normal')
     btnplt1=Button(fenetre,font=("Arial",10),width="15",text="Epipremnum aureum \n Niveau 1",bg="peru",command=appel_infoplt1)
@@ -102,8 +103,9 @@ def jeu(fenetre,nom,pdp,canvaJeu):
         y+=Dy
         if (x>1050 and x<1150) and (y>200 and y<300):
             return True
-    
+    """
     #plante2
+    """
     canvaJeu.plt2=PhotoImage(file="top-view_1.png")##
     canvaJeu.create_image(1100,400,image=canvaJeu.plt2,tag="Sansevieria trifasciata",state='normal')
     btnplt2=Button(fenetre,font=("Arial",10),width="15",text="plante2 \n Niveau 1",bg="peru",command=appel_infoplt2)
@@ -113,13 +115,14 @@ def jeu(fenetre,nom,pdp,canvaJeu):
         y+=Dy
         if (x>1050 and x<1150) and (y>350 and y<450):
             return True
-    
+    """
     #plante3
+    """
     canvaJeu.plt3=PhotoImage(file="top-view_1.png")##
     canvaJeu.create_image(1100,550,image=canvaJeu.plt3,tag="Chlorophytum comosum",state='normal')
     btnplt3=Button(fenetre,font=("Arial",10),width="15",text="plante3 \n Niveau 1",bg="peru",command=appel_infoplt3)
     btnplt3.place(x=1050,y=600)
-
+    """
     #plante4
     canvaJeu.plt4=PhotoImage(file="top-view_1.png")##
     canvaJeu.create_image(230,250,image=canvaJeu.plt4,state='hidden')
@@ -175,9 +178,8 @@ def jeu(fenetre,nom,pdp,canvaJeu):
     btnplt12.place(x=350,y=500)
 
     def obstacle(x,y,Dx,Dy):
-        if pan(x,y,Dx,Dy) or proxi_plt1(x,y,Dx,Dy) or proxi_plt2(x,y,Dx,Dy):
+        if pan(x,y,Dx,Dy) :#or proxi_plt1(x,y,Dx,Dy) or proxi_plt2(x,y,Dx,Dy):
             return True
-
     def up(event):
         x,y=canvaJeu.coords("perso1")
         if (y-10)>200 and not obstacle(x,y,0,-10):
@@ -218,7 +220,8 @@ def jeu(fenetre,nom,pdp,canvaJeu):
     canvaJeu.pack()
     
     def pause():
-        Pause = Toplevel(fenetre)
+        acceuil.accueil(fenetre,canvaJeu)
+
         
     def coord_souris(event):
         x = event.x

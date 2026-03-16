@@ -92,6 +92,7 @@ def accueil(fenetre,canvaJeu):
     btnValiderNom.place(x=700,y=550)
     
     canvaAcc.pack()
+    fenetre.update()
           
     fenetre.bind('<Button-1>', coord_souris)
 

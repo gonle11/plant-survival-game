@@ -6,6 +6,7 @@ import random
 from score import save_score, get_best_score
 import csv
 from tkinter import *
+import Finfoplt
 
 def sim (fenetre,canvaJeu):
     print("debutJeu")
@@ -23,6 +24,8 @@ def sim (fenetre,canvaJeu):
         si(simulation)
 
     def si(simulation):
+        listefct=[Finfoplt.infoplt1,Finfoplt.infoplt2,Finfoplt.infoplt3]
+        
         if simulation.running:
             simulation.update()
             print(f"Time: {simulation.time}")
@@ -34,7 +37,18 @@ def sim (fenetre,canvaJeu):
                     f"Stage: {plant.growth_stage}",
                     plant.name,
                 )
-                canvaJeu.itemconfig(str(plant.name),state='hidden')##
+                #canvaJeu.itemconfig(str(plant.name),state='hidden')##
+                #dicopltidex = {0 : "Epipremnum aureum",....}
+                def appel_info():
+                    listefct[i](fenetre)
+                pltplace = [["Epipremnum aureum",1100,250,1050,300],["Sansevieria trifasciata",1100,400,1050,450],["Chlorophytum comosum",1100,550,1050,600]]
+                canvaJeu.plt1=PhotoImage(file="top-view_1.png")
+                canvaJeu.create_image(pltplace[i][1],pltplace[i][2],image=canvaJeu.plt1,tag=pltplace[i][0])
+                btnplt1=Button(fenetre,font=("Arial",10),width="15",text=pltplace[i][0],bg="peru",command=appel_info)
+                btnplt1.place(x=pltplace[i][3],y=pltplace[i][4])
+                
+
+
                 canvaJeu.pack()
                 fenetre.update()
                 fenetre.after(1000, sii)
