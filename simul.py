@@ -10,13 +10,15 @@ import Finfoplt
 import simulation 
 
 def afficheplt(nom,canvaJeu,fenetre):
+    def appel_plt():
+        Finfoplt.infoplt1(fenetre)
     dicoplt={"Epipremnum aureum":(1100,250,1050,300),"Sansevieria trifasciata":(1100,400,1050,450),"Chlorophytum comosum":(1100,550,1050,600)}
     #pltplace = [["Epipremnum aureum",1100,250,1050,300],["Sansevieria trifasciata",1100,400,1050,450],["Chlorophytum comosum",1100,550,1050,600]]
     valeurs = dicoplt.get(nom)
     ix,iy,bx,by = valeurs
     canvaJeu.plt=PhotoImage(file="top-view_1.png")
     canvaJeu.create_image(ix,iy,image=canvaJeu.plt)
-    btnplt=Button(fenetre,font=("Arial",10),width="15",text=nom,bg="peru")#,command=appel_infoplt1)
+    btnplt=Button(fenetre,font=("Arial",10),width="15",text=nom,bg="peru",command=appel_plt)
     btnplt.place(x=bx,y=by)
     canvaJeu.pack()
     fenetre.update()

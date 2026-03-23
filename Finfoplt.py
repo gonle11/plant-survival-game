@@ -4,7 +4,6 @@ import FinfoPlantes
 def recup_hum(Humid):
     print(Humid)
 
-
 def recup_lum(Lumin):
     print(Lumin)
 
