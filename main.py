@@ -18,8 +18,8 @@ import acceuil
 fenetre=Tk()
 
 #creation du canva + bg
-print(os.getcwd())
-os.chdir("plant-survival-game")
+#print(os.getcwd())
+#os.chdir("plant-survival-game")
 canvaJeu = Canvas(fenetre, width=1300, height=645)
 canvaJeu.fondBG = PhotoImage(file="fond_lavande.png")
 canvaJeu.create_image(650,322,image=canvaJeu.fondBG)

@@ -2,7 +2,8 @@
 
 import random
 import csv
-import tkinter
+from tkinter import *
+import simul
 
 class Simulation:
     def __init__(self, plants, plant_pool):
@@ -19,7 +20,7 @@ class Simulation:
 
 
         
-    def update(self):
+    def update(self,canvaJeu,fenetre):
         self.time += 1
 
         # define if level up
@@ -51,14 +52,9 @@ class Simulation:
                 self.plant_pool[new_plant.difficulty].remove(new_plant)
                 self.plants.append(new_plant)
                 ###
-                """
-                dicoplt={"Epipremnum aureum":(1100,250,1050,300)}
-                pltplace = [["Epipremnum aureum",1100,250,1050,300],["Sansevieria trifasciata",1100,400,1050,450],["Chlorophytum comosum",1100,550,1050,600]]
-                canvaJeu.plt1=PhotoImage(file="top-view_1.png")
-                canvaJeu.create_image(pltplace[i][1],pltplace[i][2],image=canvaJeu.plt1,tag=pltplace[i][0])
-                btnplt1=Button(fenetre,font=("Arial",10),width="15",text=pltplace[i][0],bg="peru")#,command=appel_infoplt1)
-                btnplt1.place(x=pltplace[i][3],y=pltplace[i][4])
-                """
+                print(new_plant.name)
+                simul.afficheplt(new_plant.name,canvaJeu,fenetre)
+                
         # Update plants
         for plant in self.plants:
             plant.update()
