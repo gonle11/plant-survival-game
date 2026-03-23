@@ -50,16 +50,12 @@ class Simulation:
             if possible:
                 new_plant = random.choice(possible)
                 self.plant_pool[new_plant.difficulty].remove(new_plant)
-<<<<<<< HEAD
                 self.plants.append(new_plant)
-                ###
+                ###afficher les plantes
                 print(new_plant.name)
                 simul.afficheplt(new_plant.name,canvaJeu,fenetre)
                 
-=======
-                ### AFFICHE LA PLANTE DANS LE JEU ###
-    
->>>>>>> 5b1d6f3ed5f78c32ec3acad42c143d371d403e8f
+
         # Update plants
         for plant in self.plants:
             plant.update()
