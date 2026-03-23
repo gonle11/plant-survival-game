@@ -1,5 +1,6 @@
 from tkinter import *
 import FinfoPlantes
+import plant_class
 
 def recup_hum(Humid):
     print(Humid)
@@ -10,11 +11,12 @@ def recup_lum(Lumin):
 def recup_chal(Chal):
     print(Chal)
 
-def ajt_eau():
-    global eauActu
-    eauActu+=10
-    print(eauActu)
-    canvaPlt.itemconfigure("eau",text="(actuelement : {} cl)".format(eauActu))
+def ajt_eau(plant):
+    global plant.water()
+    plant.water() += 10
+    print(plant.water)
+    canvaPlt.itemconfigure("eau",text="(actuelement : {} cl)".format(plant.water))
+    
 
 def canva (fenetre,titre,lumi,humi,chal,fct):
     global valueHum, valueLum, valueChal,canvaPlt,Plt    
@@ -50,70 +52,70 @@ def canva (fenetre,titre,lumi,humi,chal,fct):
     canvaPlt.create_text(120,205,text="Chaleur : ",font=("Times",35))
 
     canvaPlt.create_text(85,255,text="Eau :",font=("Times",35))
-    canvaPlt.create_text(250,265,text="(actuelement : {} cl)".format(eauActu),font=("Times",15),tag="eau")
-    btnAjoutEau=Button(Plt,text="Ajouter \n de l'eau",background="blue",command=ajt_eau)
+    canvaPlt.create_text(250,265,text="(actuelement : {} cl)".format(plant.water),font=("Times",15),tag="eau")
+    btnAjoutEau=Button(Plt,text="Ajouter \n de l'eau",background="blue",command=lambda: ajt_eau())
     btnAjoutEau.place(x=350,y=250)
 
     canvaPlt.pack()
 
 def infoplt1(fenetre):
-    global eauActu
-    eauActu=50
+    global plant.water
+    plant.water=50
     canva(fenetre,"plante 1",55,50,55,Aplt1)
 
 def infoplt2(fenetre):
-    global eauActu
-    eauActu=40
+    global plant.water
+    plant.water=40
     canva(fenetre,"plante 2",55,30,55,Aplt2)
 
 def infoplt3(fenetre):
-    global eauActu
-    eauActu=55
+    global plant.water
+    plant.water=55
     canva(fenetre,"plante 3",65,50,55,Aplt3)
 
 def infoplt4(fenetre):
-    global eauActu
-    eauActu=60
+    global plant.water
+    plant.water=60
     canva(fenetre,"plante 4",70,60,60,Aplt4)
 
 def infoplt5(fenetre):
-    global eauActu
-    eauActu=65
+    global plant.water
+    plant.water=65
     canva(fenetre,"plante 5",70,70,65,Aplt5)
 
 def infoplt6(fenetre):
-    global eauActu
-    eauActu=60
+    global plant.water
+    plant.water=60
     canva(fenetre,"plante 6",50,80,60,Aplt6)
 
 def infoplt7(fenetre):
-    global eauActu
-    eauActu=55
+    global plant.water
+    plant.water=55
     canva(fenetre,"plante 7",60,50,60,Aplt7)
 
 def infoplt8(fenetre):
-    global eauActu
-    eauActu=65
+    global plant.water
+    plant.water=65
     canva(fenetre,"plante 8",60,90,65,Aplt8)
 
 def infoplt9(fenetre):
-    global eauActu
-    eauActu=70
+    global plant.water
+    plant.water=70
     canva(fenetre,"plante 9",70,90,70,Aplt9)
 
 def infoplt10(fenetre):
-    global eauActu
-    eauActu=60
+    global plant.water
+    plant.water=60
     canva(fenetre,"plante 10",80,60,65,Aplt10)
 
 def infoplt11(fenetre):
-    global eauActu
-    eauActu=25
+    global plant.water
+    plant.water=25
     canva(fenetre,"plante 11",95,15,80,Aplt11)
 
 def infoplt12(fenetre):
-    global eauActu
-    eauActu=75
+    global plant.water
+    plant.water=75
     canva(fenetre,"plante 12",80,95,75,Aplt12)
 
 def Aplt1():
