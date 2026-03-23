@@ -9,16 +9,32 @@ from tkinter import *
 import Finfoplt
 import simulation 
 
+
+
 def afficheplt(nom,canvaJeu,fenetre):
-    def appel_plt():
+    
+    def appel_plt1():
         Finfoplt.infoplt1(fenetre)
-    dicoplt={"Epipremnum aureum":(1100,250,1050,300),"Sansevieria trifasciata":(1100,400,1050,450),"Chlorophytum comosum":(1100,550,1050,600)}
+    def appel_plt2():
+        Finfoplt.infoplt2(fenetre)
+    def appel_plt3():
+        Finfoplt.infoplt3(fenetre)
+    liste_plt=[appel_plt1,appel_plt2,appel_plt3]
+      
+    dicoplt={"Epipremnum aureum":(1,1050,175,1050,300),"Sansevieria trifasciata":(2,1050,325,1050,450),"Chlorophytum comosum":(3,1050,475,1050,600)}
     #pltplace = [["Epipremnum aureum",1100,250,1050,300],["Sansevieria trifasciata",1100,400,1050,450],["Chlorophytum comosum",1100,550,1050,600]]
     valeurs = dicoplt.get(nom)
-    ix,iy,bx,by = valeurs
-    canvaJeu.plt=PhotoImage(file="top-view_1.png")
-    canvaJeu.create_image(ix,iy,image=canvaJeu.plt)
-    btnplt=Button(fenetre,font=("Arial",10),width="15",text=nom,bg="peru",command=appel_plt)
+    i,ix,iy,bx,by = valeurs
+
+    plt1=PhotoImage(file="top-view_1.png")
+    plt2=PhotoImage(file="top-view_2.png")
+    plt3=PhotoImage(file="top-view_3.png")
+    
+    listeimg=[plt1,plt2,plt3]
+    #canvaJeu.create_image(ix,iy,image=listeimg[i-1])
+    labelimg=Label(fenetre,image=listeimg[i-1])
+    labelimg.place(x=ix,y=iy)
+    btnplt=Button(fenetre,font=("Arial",10),width="15",text=nom,bg="peru",command=liste_plt[i-1])
     btnplt.place(x=bx,y=by)
     canvaJeu.pack()
     fenetre.update()
@@ -39,9 +55,7 @@ def sim (fenetre,canvaJeu):
     def sii():
         si(simulation)
 
-    def si(simulation):
-        listefct=[Finfoplt.infoplt1,Finfoplt.infoplt2,Finfoplt.infoplt3]
-        
+    def si(simulation):      
         
         if simulation.running:
             simulation.update(canvaJeu,fenetre)
